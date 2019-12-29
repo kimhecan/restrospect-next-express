@@ -221,7 +221,7 @@ const AppLayout = ({
       lineNumber: 25
     },
     __self: undefined
-  }, "\uB2EC\uB825\uC608\uC815")), children);
+  }, "\uB2EC\uB825\uC608\uC815")));
 };
 
 AppLayout.propTypes = {
