@@ -126,6 +126,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/create */ "co
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/define-properties */ "core-js/library/fn/object/define-properties");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js":
 /*!*******************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js ***!
@@ -145,6 +156,28 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/define-proper
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptor */ "core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptors */ "core-js/library/fn/object/get-own-property-descriptors");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-symbols */ "core-js/library/fn/object/get-own-property-symbols");
 
 /***/ }),
 
@@ -200,6 +233,36 @@ module.exports = __webpack_require__(/*! core-js/library/fn/symbol/iterator */ "
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/weak-map */ "core-js/library/fn/weak-map");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
 
 /***/ }),
 
@@ -2166,8 +2229,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _reducer_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reducer/user */ "./reducer/user.js");
 var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\pages\\signup.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -2194,6 +2262,7 @@ const Signup = () => {
   const [id, onChangeId] = useInput('');
   const [nick, onChangeNick] = useInput('');
   const [password, onChangePassword] = useInput('');
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
   const onChangePasswordCheck = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     setPasswordError(e.target.value !== password);
     setPasswordCheck(e.target.value);
@@ -2204,6 +2273,12 @@ const Signup = () => {
     if (password !== passwordCheck) {
       return setPasswordError(true);
     }
+
+    dispatch(Object(_reducer_user__WEBPACK_IMPORTED_MODULE_4__["signUpAction"])({
+      nick,
+      id,
+      password
+    }));
   }, [password, passwordCheck]);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Form"], {
     onSubmit: onSubmit,
@@ -2215,26 +2290,26 @@ const Signup = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 43
     },
     __self: undefined
   }, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 44
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-nick",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 45
     },
     __self: undefined
   }, "\uB2C9\uB124\uC784"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 46
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -2247,32 +2322,32 @@ const Signup = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 47
     },
     __self: undefined
   })), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 49
     },
     __self: undefined
   }), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 50
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-id",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 51
     },
     __self: undefined
   }, "\uC544\uC774\uB514"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 52
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -2285,32 +2360,32 @@ const Signup = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 53
     },
     __self: undefined
   })), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 55
     },
     __self: undefined
   }), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 56
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-password",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 57
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 58
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -2324,38 +2399,38 @@ const Signup = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 59
     },
     __self: undefined
   }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 60
     },
     __self: undefined
   })), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 62
     },
     __self: undefined
   }), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 63
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-password-check",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 64
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638\uCCB4\uD06C"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 65
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -2369,7 +2444,7 @@ const Signup = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 66
     },
     __self: undefined
   }), passwordError && __jsx("div", {
@@ -2378,32 +2453,32 @@ const Signup = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 67
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 69
     },
     __self: undefined
   }), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 70
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 71
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 71
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -2414,13 +2489,109 @@ const Signup = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 71
     },
     __self: undefined
   }, "\uAC00\uC785\uD558\uAE30"))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Signup);
+
+/***/ }),
+
+/***/ "./reducer/user.js":
+/*!*************************!*\
+  !*** ./reducer/user.js ***!
+  \*************************/
+/*! exports provided: inintialState, SIGN_UP, SIGN_UP_SUCCESS, LOG_IN, LOG_IN_SUCCESS, LOG_IN_FAILURE, LOG_OUT, loginAction, signUpAction, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "inintialState", function() { return inintialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP", function() { return SIGN_UP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_SUCCESS", function() { return SIGN_UP_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN", function() { return LOG_IN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_SUCCESS", function() { return LOG_IN_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_FAILURE", function() { return LOG_IN_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT", function() { return LOG_OUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loginAction", function() { return loginAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signUpAction", function() { return signUpAction; });
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-properties */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+
+
+
+
+
+
+
+
+function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
+
+const inintialState = {
+  user: {
+    nick: null,
+    id: null,
+    password: null
+  }
+};
+const SIGN_UP = 'SIGN_UP';
+const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
+const LOG_IN = 'LOG_IN'; // 액션의 이름
+
+const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS'; // 액션의 이름
+
+const LOG_IN_FAILURE = 'LOG_IN_FAILURE'; // 액션의 이름
+
+const LOG_OUT = 'LOG_OUT';
+const loginAction = data => {
+  return {
+    type: LOG_IN,
+    data
+  };
+};
+const signUpAction = data => {
+  return {
+    type: SIGN_UP,
+    data
+  };
+};
+/* harmony default export */ __webpack_exports__["default"] = ((state = inintialState, action) => {
+  switch (action.type) {
+    case LOG_IN:
+      {
+        return _objectSpread({}, state, {
+          user: action.data
+        });
+      }
+
+    case SIGN_UP:
+      {
+        return _objectSpread({}, state, {
+          user: action.data
+        });
+      }
+
+    default:
+      {
+        return _objectSpread({}, state);
+      }
+  }
+});
 
 /***/ }),
 
@@ -2480,6 +2651,17 @@ module.exports = require("core-js/library/fn/object/create");
 
 /***/ }),
 
+/***/ "core-js/library/fn/object/define-properties":
+/*!**************************************************************!*\
+  !*** external "core-js/library/fn/object/define-properties" ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/define-properties");
+
+/***/ }),
+
 /***/ "core-js/library/fn/object/define-property":
 /*!************************************************************!*\
   !*** external "core-js/library/fn/object/define-property" ***!
@@ -2499,6 +2681,28 @@ module.exports = require("core-js/library/fn/object/define-property");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/get-own-property-descriptors":
+/*!*************************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-descriptors" ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-descriptors");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/get-own-property-symbols":
+/*!*********************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-symbols" ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-symbols");
 
 /***/ }),
 
@@ -2587,6 +2791,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-redux":
+/*!******************************!*\
+  !*** external "react-redux" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
 
 /***/ }),
 

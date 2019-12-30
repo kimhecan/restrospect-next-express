@@ -1,16 +1,15 @@
 import React from 'react';
 import PostForm from '../components/PostForm';
 import Login from '../components/login';
-
-
-const dummy = {
-  isLoggedIn: false,
-}
+import { useSelector } from 'react-redux';
 
 const Home = () => {
+
+  const { user } = useSelector(state => state.user);
+
   return (
     <>
-      {dummy.isLoggedIn ? <PostForm /> : <Login />}
+      {user.id !== null  ? <PostForm /> : <Login />}
     </>
   )
 }
