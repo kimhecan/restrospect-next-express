@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import Link from 'next/link'
 import { Form, Input, Button } from 'antd';
 
 export const useInput = (initValue = null) => {
@@ -22,33 +23,44 @@ const Signup = () => {
     setPasswordCheck(e.target.value);
   })
 
+  const onSubmit = useCallback((e) => {
+    e.preventDefault();
+    if(password !== passwordCheck) {
+      return setPasswordError(true);
+    }
+  }, [password, passwordCheck])
+
   return (
     <>
-      <Form onSubmit={onSubmit} style ={{ padding: 10 }}>
+      <Form onSubmit={onSubmit} style={{ position: 'absolute', left: '50%', top: '50%', marginTop: '50px'}}>
         <div>
           <label htmlFor="user-nick">닉네임</label>
           <br />
-          <Input name="user-nick" value={nick} required onChange={onChangeNick} />
+          <Input name="user-nick" value={nick} required onChange={onChangeNick} style={{width: '400px'}} />
         </div>
+        <br />
         <div>
           <label htmlFor="user-id">아이디</label>
           <br />
-          <Input name="user-id" value={id} onChange={onChangeId} required />
+          <Input name="user-id" value={id} onChange={onChangeId} required style={{width: '400px'}}/>
         </div>
+        <br />
         <div>
           <label htmlFor="user-password">비밀번호</label>
           <br />
-          <Input name="user-password" type="password" value={password} onChange={onChangePassword} required />
+          <Input name="user-password" type="password" value={password} onChange={onChangePassword} required style={{width: '400px'}}/>
           <br />
         </div>
+        <br />
         <div>
           <label htmlFor="user-password-check">비밀번호체크</label>
           <br />
-          <Input name="user-password-check" type="password" value={passwordCheck} onChange={onChangePasswordCheck} required />
+          <Input name="user-password-check" type="password" value={passwordCheck} onChange={onChangePasswordCheck} required style={{width: '400px'}}/>
           {passwordError && <div style={{ color: 'red' }}>비밀번호가 일치하지 않습니다.</div>}
         </div>
-        <div style={{ marginTop: 10 }}>
-          <Button type="primary" htmlType="submit">가입하기</Button>
+        <br />
+        <div>
+          <Link href='/'><a><Button type="primary" htmlType="submit" style={{width: '400px'}}>가입하기</Button></a></Link>
         </div>
       </Form>
     </>

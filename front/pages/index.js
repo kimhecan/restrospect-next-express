@@ -1,14 +1,16 @@
 import React from 'react';
-import Login from './login';
+import PostForm from '../components/PostForm';
+import Login from '../components/login';
+
 
 const dummy = {
-  isLoggedIn: true
+  isLoggedIn: false,
 }
 
 const Home = () => {
   return (
     <>
-      {dummy.isLoggedIn ? <Login /> : ''}
+      {dummy.isLoggedIn ? <PostForm /> : <Login />}
     </>
   )
 }
