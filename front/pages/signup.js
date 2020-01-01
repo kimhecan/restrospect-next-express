@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import Link from 'next/link'
 import { Form, Input, Button } from 'antd';
 import { useDispatch } from 'react-redux';
-import { signUpAction} from '../reducer/user'; 
+import { SIGN_UP_REQUEST } from '../reducer/user'; 
 
 export const useInput = (initValue = null) => {
   const [value, setter] = useState(initValue);
@@ -16,7 +16,7 @@ const Signup = () => {
   const [passwordCheck, setPasswordCheck] = useState('');
   const [passwordError, setPasswordError] = useState(false);
 
-  const [id, onChangeId] = useInput('');
+  const [userId, onChangeId] = useInput('');
   const [nick, onChangeNick] = useInput('');
   const [password, onChangePassword] = useInput('');
   const dispatch = useDispatch();
@@ -31,12 +31,17 @@ const Signup = () => {
     if(password !== passwordCheck) {
       return setPasswordError(true);
     }
-    dispatch(signUpAction({
-      nick,
-      id,
-      password
-    }))
-  }, [password, passwordCheck]);
+    dispatch({
+      type: SIGN_UP_REQUEST,
+      data: {
+        nick,
+        userId,
+        password,
+      }
+    })
+    history.back();
+  }, [nick, userId, password, passwordCheck]);
+
 
   return (
     <>
@@ -50,7 +55,7 @@ const Signup = () => {
         <div>
           <label htmlFor="user-id">아이디</label>
           <br />
-          <Input name="user-id" value={id} onChange={onChangeId} required style={{width: '400px'}}/>
+          <Input name="user-id" value={userId} onChange={onChangeId} required style={{width: '400px'}}/>
         </div>
         <br />
         <div>
@@ -68,7 +73,7 @@ const Signup = () => {
         </div>
         <br />
         <div>
-          <Link href='/'><a><Button type="primary" htmlType="submit" style={{width: '400px'}}>가입하기</Button></a></Link>
+          <Button type="primary" htmlType="submit" style={{width: '400px'}}>가입하기</Button>
         </div>
       </Form>
     </>

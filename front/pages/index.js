@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <>
-      {user.id !== null  ? <PostForm /> : <Login />}
+      {user.userId !== null  ? <PostForm /> : <Login />}
     </>
   )
 }

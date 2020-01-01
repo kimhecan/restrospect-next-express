@@ -4,8 +4,11 @@ import PropTypes from 'prop-types';
 import withRedux from 'next-redux-wrapper';
 import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import AppLayout from '../components/AppLayout';
 import reducer from '../reducer';
+import createSagaMiddleware from 'redux-saga';
+import rootSaga  from '../sagas';
 
 
 const Restropect = ({ Component, store }) => {
@@ -29,11 +32,14 @@ Restropect.propTypes = {
   store: PropTypes.object,
 };
 
-export default withRedux((initialState, options) => {
-  const middlewares = [];
-  const enhancer = compose(
-    applyMiddleware(...middlewares),
-  );
+const configureStore = (initialState) => {
+  const sagaMiddleware = createSagaMiddleware();
+  const middlewares = [sagaMiddleware];
+  const enhancer = compose(composeWithDevTools(applyMiddleware(...middlewares)));
   const store = createStore(reducer, initialState, enhancer);
+  sagaMiddleware.run(rootSaga);
   return store;
-})(Restropect);
+};
+
+
+export default withRedux(configureStore)(Restropect);
