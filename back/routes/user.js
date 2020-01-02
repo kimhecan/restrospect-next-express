@@ -12,7 +12,7 @@ router.get('/', (req, res) => { // /user/ 사용자정보가져오기 loadUser
   return res.json(user);
 });
 
-router.post('/', async (req, res, next) => { // 회원가입
+router.post('/signup', async (req, res, next) => { // 회원가입
   try {
     console.log(req.body.userId);
     const exUser = await db.User.findOne({
@@ -51,9 +51,9 @@ router.post('/login', (req, res, next) => {
         if (loginErr) {
           return next(loginErr);
         }
-        const fullUser = await dfb.User.findOne({
+        const fullUser = await db.User.findOne({
           where: {id : user.id },
-          attribute:  ['id', 'nick', 'userId'],
+          attributes:  ['id', 'nick', 'userId'],
         });
         return res.json(fullUser);
       } catch (e) {
@@ -62,5 +62,12 @@ router.post('/login', (req, res, next) => {
     });
   })(req, res, next);
 });
+
+
+router.post('/logout', (req, res) => {
+  req.logout();
+  req.session.destroy();
+  res.send('logout 성공')
+})
 
 module.exports = router;

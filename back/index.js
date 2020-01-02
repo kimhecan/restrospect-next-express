@@ -33,6 +33,8 @@ app.use(expressSession({
   },
   name: 'retropect'
 }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/user', userRouter);
 

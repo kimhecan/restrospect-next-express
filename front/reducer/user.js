@@ -3,7 +3,6 @@ export const inintialState = {
     nick: null,
     userId: null,
     password: null
-    
   }
 };
 
@@ -50,6 +49,21 @@ export default (state = inintialState, action) => {
       return {
         ...state,
         user: action.data,
+      }
+    }
+    case LOG_OUT_REQUEST: {
+      return {
+        ...state,
+      }
+    }
+    case LOG_OUT_SUCCESS: {
+      return {
+        ...state,
+        user: {
+          nick: null,
+          userId: null,
+          password: null,
+        }
       }
     }
     default: {

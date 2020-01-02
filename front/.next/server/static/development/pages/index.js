@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -196,7 +196,7 @@ const Login = () => {
         password
       }
     });
-  }, [id, password]);
+  }, [userId, password]);
   return __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Form"], {
     onSubmit: onSubmitForm,
     style: {
@@ -2855,10 +2855,31 @@ const LOAD_FOLLOW_FAILURE = 'LOAD_FOLLOW_FAILURE';
         });
       }
 
+    case LOG_IN_REQUEST:
+      {
+        return _objectSpread({}, state);
+      }
+
     case LOG_IN_SUCCESS:
       {
         return _objectSpread({}, state, {
           user: action.data
+        });
+      }
+
+    case LOG_OUT_REQUEST:
+      {
+        return _objectSpread({}, state);
+      }
+
+    case LOG_OUT_SUCCESS:
+      {
+        return _objectSpread({}, state, {
+          user: {
+            nick: null,
+            userId: null,
+            password: null
+          }
         });
       }
 
@@ -2871,7 +2892,7 @@ const LOAD_FOLLOW_FAILURE = 'LOAD_FOLLOW_FAILURE';
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
