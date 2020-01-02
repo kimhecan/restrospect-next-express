@@ -27,12 +27,12 @@ const AppLayout = ({ children }) => {
 
   return (
     <>
-      <Menu mode="horizontal" selectedKeys={current} onClick={handleClick}>
-        <Menu.Item key="home"><Link href="/"><a>restropect</a></Link></Menu.Item>
+      <Menu mode="horizontal" selectedKeys={current} onClick={handleClick} style={{ backgroundColor: '#00001a'}}>
+        <Menu.Item key="home"><Link href="/"><a style={{ color: 'white'}}>RESTROPECT</a></Link></Menu.Item>
         <Menu.Item key="search">
-          <Input.Search enterButton style={{ verticalAlign: 'middle' }} />
+          <Input.Search enterButton style={{ verticalAlign: 'middle', backgroundColor: '#000066' }}  />
         </Menu.Item>
-        <SubMenu title={ <span className="submenu">{user.nick ? user.nick : ''}</span>} style={{ float: 'right' }}>
+        <SubMenu title={ <span className="submenu" style={{color: 'white'}}>{user.nick ? user.nick : ''}</span>} style={{ float: 'right' }}>
           <Menu.Item key="private">개인정보</Menu.Item>
           <Menu.Item key="logout">로그아웃</Menu.Item>
         </SubMenu>
@@ -52,5 +52,5 @@ const AppLayout = ({ children }) => {
 AppLayout.propTypes = {
   children: PropsTypes.node,
 }
-
+//<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 export default AppLayout;
