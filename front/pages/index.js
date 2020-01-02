@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PostForm from '../components/PostForm';
 import Login from '../components/login';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { LOAD_USER_REQUEST } from '../reducer/user';
 
 const Home = () => {
 
@@ -13,5 +14,10 @@ const Home = () => {
     </>
   )
 }
+
+
+Home.getInitialProps = async (context) => {
+  console.log(Object.keys(context));
+};
 
 export default Home;

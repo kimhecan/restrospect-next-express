@@ -106,37 +106,84 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pages_signup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/signup */ "./pages/signup.js");
 var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\components\\PostForm.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const PostForm = () => {
+  const [firstText, changeFirstText] = Object(_pages_signup__WEBPACK_IMPORTED_MODULE_2__["useInput"])('');
+  const [secondText, changeSecondText] = Object(_pages_signup__WEBPACK_IMPORTED_MODULE_2__["useInput"])('');
+  const [thridText, changeThridText] = Object(_pages_signup__WEBPACK_IMPORTED_MODULE_2__["useInput"])('');
+
+  const onSubmit = e => {
+    e.preventDefault(); // if (!text || !text.trim()) {
+    //   return alert('게시글을 작성하세요.');
+    // }
+
+    const text = `<어제 한 일>\n${firstText}\n\n<오늘 할 일>\n${secondText}\n\n<어제의 문제점>\n${thridText}`;
+    console.log(text); // dispatch({
+    //   type: ADD_POST_REQUEST,
+    //   data: formData,
+    // });
+  };
+
   return __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Form"], {
+    onSubmit: onSubmit,
     style: {
       margin: '10px 0 20px'
     },
     encType: "multipart/form-data",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 26
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
+    value: firstText,
+    onChange: changeFirstText,
     maxLength: 500,
-    placeholder: "\uC5B4\uB5A4 \uC2E0\uAE30\uD55C \uC77C\uC774 \uC788\uC5C8\uB098\uC694?",
+    placeholder: "<\uC5B4\uC81C \uD55C \uC77C>",
     style: {
-      height: '200px'
+      height: '100px'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 27
+    },
+    __self: undefined
+  }, '<어제한일>', "}"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
+    value: secondText,
+    onChange: changeSecondText,
+    maxLength: 500,
+    placeholder: "<\uC624\uB298 \uD560 \uC77C>",
+    style: {
+      height: '100px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
+    value: thridText,
+    onChange: changeThridText,
+    maxLength: 500,
+    placeholder: "<\uC5B4\uC81C\uC758 \uBB38\uC81C\uC810>",
+    style: {
+      height: '100px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
     },
     __self: undefined
   }), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 30
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -149,7 +196,7 @@ const PostForm = () => {
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 31
     },
     __self: undefined
   }, "\uBC1C\uD589")));
@@ -2528,14 +2575,19 @@ if (false) {} else {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_PostForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PostForm */ "./components/PostForm.js");
-/* harmony import */ var _components_login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/login */ "./components/login.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_PostForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/PostForm */ "./components/PostForm.js");
+/* harmony import */ var _components_login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/login */ "./components/login.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _reducer_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reducer/user */ "./reducer/user.js");
+
 var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\pages\\index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -2544,20 +2596,24 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Home = () => {
   const {
     user
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user);
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, user.userId !== null ? __jsx(_components_PostForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(state => state.user);
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, user.userId !== null ? __jsx(_components_PostForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 13
     },
     __self: undefined
-  }) : __jsx(_components_login__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }) : __jsx(_components_login__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 13
     },
     __self: undefined
   }));
+};
+
+Home.getInitialProps = async context => {
+  console.log(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(context));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
