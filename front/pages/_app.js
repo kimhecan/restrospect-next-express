@@ -12,6 +12,7 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga  from '../sagas';
 import axios from 'axios';
 import { LOAD_USER_REQUEST } from '../reducer/user'
+import { LOAD_POST_REQUEST } from '../reducer/post';
 
 
 const Restropect = ({ Component, store, pageProps }) => {

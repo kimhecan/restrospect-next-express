@@ -3,8 +3,7 @@ import { Button, Form, Input } from 'antd';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import { useInput } from '../pages/signup';
-import { LOG_IN_REQUEST } from '../reducer/user';
-
+import { LOG_IN_REQUEST } from '../reducer/user'
 
 const Login = () => {
   const [userId, onChangeId] = useInput('');
@@ -27,10 +26,10 @@ const Login = () => {
     <>
       <div>
         <img src="https://user-images.githubusercontent.com/39295881/71653597-a2415880-2d70-11ea-9c14-719df1872c41.png"
-             style={{position: 'absolute', left: '59%', top: '50%', width: '50px', margin: '15px'}}
+             style={{position: 'absolute', left: '60%', top: '50%', width: '50px', margin: '15px'}}
         />
       </div>
-      <div style={{  position: 'absolute', left: '55%', top: '50%', fontSize: '20px', marginTop: '75px' }}>
+      <div style={{  position: 'absolute', left: '57%', top: '50%', fontSize: '20px', marginTop: '75px' }}>
         <span>Sign in to Retrospect</span>
 
       </div>
@@ -49,8 +48,8 @@ const Login = () => {
           </div>
           <br />
           <div style={{ marginTop: '10px' }}>
-            <Button type="primary" htmlType="submit" style={{marginRight:'6px', width: '120px', backgroundColor: '#00001a', borderColor: '#00001a' }}>로그인</Button>
-            <Link href="/signup"><a><Button style={{ width: '120px' }}>회원가입</Button></a></Link>
+            <Button type="primary" htmlType="submit" style={{marginRight:'6px', width: '120px', backgroundColor: '#00001a', borderColor: '#00001a' }}>Sign in</Button>
+            <Link href="/signup"><a><Button style={{ width: '120px' }}>Sign up</Button></a></Link>
           </div>
         </Form>
       </div>

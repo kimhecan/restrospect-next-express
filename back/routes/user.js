@@ -7,6 +7,9 @@ const { isLoggedIn } = require('./middleware');
 const router = express.Router();
 
 router.get('/', (req, res) => { // /user/ 사용자정보가져오기 loadUser
+  if (req.user == undefined) {
+    return res.json({nick:null, userId: null})
+  }
   const user = Object.assign({}, req.user.toJSON());
   delete user.password;
   return res.json(user);
@@ -29,8 +32,6 @@ router.post('/signup', async (req, res, next) => { // 회원가입
       userId: req.body.userId,
       password: hashedPassword
     });
-    console.log(newUser);
-    
     return res.status(200).json(newUser);
   } catch (e) {
       return next(e);

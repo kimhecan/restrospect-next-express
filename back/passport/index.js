@@ -8,9 +8,16 @@ module.exports = () => {
   });
 
   passport.deserializeUser( async (id, done) => {
+    console.log('deserialize');
+    
     try {
       const user = await db.User.findOne({
         where: { id },
+        include: [{
+          model: db.Post,
+          as: 'Posts',
+          attributes: ['id']
+        }]
       });
       return done(null, user);
     } catch (e) {

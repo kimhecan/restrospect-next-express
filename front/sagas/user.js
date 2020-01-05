@@ -5,13 +5,11 @@ import { SIGN_UP_REQUEST, SIGN_UP_SUCCESS, SIGN_UP_FAILURE, LOG_IN_REQUEST, LOG_
 
 
 function signUpAPI(signUpData) {
-  console.log(signUpData);
   return axios.post('/user/signup', signUpData);
 }
 
 function* signUp(action) {
   try {
-    console.log(action.data, 'action.data');
     yield call(signUpAPI, action.data);
     yield put  ({ // put은 dispatch 동일
       type: SIGN_UP_SUCCESS,
@@ -91,15 +89,12 @@ function loadUserAPI(userId) {
 
 function* loadUser(action) {
   try {
-    // yield call(loadUserAPI);
     const result = yield call(loadUserAPI, action.data);
     yield put({ // put은 dispatch 동일
       type: LOAD_USER_SUCCESS,
       data: result.data,
-      me: !action.data,
     });
   } catch (e) { // loginAPI 실패
-    console.error(e);
     yield put({
       type: LOAD_USER_FAILURE,
       error: e,

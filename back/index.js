@@ -9,6 +9,7 @@ const passport = require('passport');
 const passportConfig = require('./passport');
 const db = require('./models');
 const userRouter = require('./routes/user');
+const postRouter = require('./routes/post');
 
 dotenv.config();
 const app = express();
@@ -37,6 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/user', userRouter);
+app.use('/post', postRouter);
 
 app.listen('3065', () => {
   console.log('server is running on http://localhost:3065');

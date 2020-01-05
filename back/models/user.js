@@ -18,5 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     charset: 'utf8',
     collate: 'utf8_general_ci',
   });
+  User.associate = (db) => {
+    db.User.hasMany(db.Post, { as: 'Posts' });
+  };
+
   return User;
 }

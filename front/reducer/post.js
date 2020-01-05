@@ -15,16 +15,39 @@ export const ADD_POST_REQUEST = 'ADD_POST_REQUEST';
 export const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
 export const ADD_POST_FAILURE = 'ADD_POST_FAILURE';
 
+
+export const LOAD_POST_REQUEST = 'LOAD_POST_REQUEST';
+export const LOAD_POST_SUCCESS = 'LOAD_POST_SUCCESS';
+export const LOAD_POST_FAILURE = 'LOAD_POST_FAILURE';
+
+
 export default (state = initalState, action) => {
   switch (action.type) {
-    case LOAD_MAIN_POSTS_REQUEST: {
+    case LOAD_POST_REQUEST: {
       return {
         ...state,
       }
     }
-    case LOAD_MAIN_POSTS_SUCCESS: {
+    case LOAD_POST_SUCCESS: {
       return {
-        
+        ...state,
+        mainPosts: action.data,
+      }
+    }
+    case ADD_POST_REQUEST: {
+      return {
+        ...state,
+      }
+    }
+    case ADD_POST_SUCCESS: {
+      return {
+        ...state,
+        mainPosts: [action.data, ...state.mainPosts],
+      }
+    }
+    default: {
+      return {
+        ...state,
       }
     }
   }
