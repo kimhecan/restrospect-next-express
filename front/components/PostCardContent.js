@@ -7,12 +7,12 @@ const PostCardContent = ({ postData }) => {
       {postData.split(/(\<[^\>]+\>)/g).map((v) => {
         if (v.match(/\<[^\>]+\>/)) {
           return (
-            <strong key={+v} style={{color: 'black'}}>{v}</strong>
+            <strong key={v} style={{color: 'black', fontSize: '20px'}}>{v}</strong>
           )
         }
-        return (
-        <p key={+v}>{v +'\n'}</p>
-        );
+        return v.split('\n').map(value => {
+           return <p style={{color: 'black', fontSize: '15px'}}>{value}</p>
+        })
       })}
     </>
   )

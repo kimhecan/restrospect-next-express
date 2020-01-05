@@ -28,7 +28,6 @@ const PostForm = () => {
     //   return alert('게시글을 작성하세요.');
     // }
     const text = `<어제 한 일> ${firstText} <오늘 할 일> ${secondText} <어제의 문제점> ${thridText}`;
-    console.log(text);
     dispatch({
       type: ADD_POST_REQUEST,
       data: text,

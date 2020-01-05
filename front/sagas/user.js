@@ -11,6 +11,7 @@ function signUpAPI(signUpData) {
 function* signUp(action) {
   try {
     yield call(signUpAPI, action.data);
+
     yield put  ({ // put은 dispatch 동일
       type: SIGN_UP_SUCCESS,
     });
@@ -18,7 +19,6 @@ function* signUp(action) {
     console.error(e);
     yield put({
       type: SIGN_UP_FAILURE,
-      error: e,
     });
   }
 }
@@ -42,7 +42,6 @@ function* logIn(action) {
       data: result.data,
     });
   } catch(e) {
-    console.error(e);
     yield put({
       type: LOG_IN_FAILURE,
     });

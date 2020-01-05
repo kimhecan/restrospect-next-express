@@ -125,8 +125,6 @@ const {
 const PostCard = ({
   post
 }) => {
-  console.log(post);
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
     style: {
       margin: '10px 0 20px'
@@ -136,7 +134,7 @@ const PostCard = ({
       key: "setting",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 15
       },
       __self: undefined
     }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
@@ -144,7 +142,7 @@ const PostCard = ({
       key: "edit",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 16
       },
       __self: undefined
     }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
@@ -152,13 +150,13 @@ const PostCard = ({
       key: "ellipsis",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 17
       },
       __self: undefined
     })],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 12
     },
     __self: undefined
   }, __jsx(Meta, {
@@ -167,13 +165,13 @@ const PostCard = ({
       postData: post.content,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 22
       },
       __self: undefined
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 20
     },
     __self: undefined
   })));
@@ -207,9 +205,10 @@ const PostCardContent = ({
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, postData.split(/(\<[^\>]+\>)/g).map(v => {
     if (v.match(/\<[^\>]+\>/)) {
       return __jsx("strong", {
-        key: +v,
+        key: v,
         style: {
-          color: 'black'
+          color: 'black',
+          fontSize: '20px'
         },
         __source: {
           fileName: _jsxFileName,
@@ -219,14 +218,19 @@ const PostCardContent = ({
       }, v);
     }
 
-    return __jsx("p", {
-      key: +v,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 14
-      },
-      __self: undefined
-    }, v + '\n');
+    return v.split('\n').map(value => {
+      return __jsx("p", {
+        style: {
+          color: 'black',
+          fontSize: '15px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        },
+        __self: undefined
+      }, value);
+    });
   }));
 };
 
@@ -277,7 +281,6 @@ const PostForm = () => {
     // }
 
     const text = `<어제 한 일> ${firstText} <오늘 할 일> ${secondText} <어제의 문제점> ${thridText}`;
-    console.log(text);
     dispatch({
       type: _reducer_post__WEBPACK_IMPORTED_MODULE_4__["ADD_POST_REQUEST"],
       data: text
@@ -292,7 +295,7 @@ const PostForm = () => {
     encType: "multipart/form-data",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 40
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
@@ -305,7 +308,7 @@ const PostForm = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 41
     },
     __self: undefined
   }, '<어제한일>', "}"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
@@ -318,7 +321,7 @@ const PostForm = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 42
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
@@ -331,13 +334,13 @@ const PostForm = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 43
     },
     __self: undefined
   }), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 44
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -350,7 +353,7 @@ const PostForm = () => {
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 45
     },
     __self: undefined
   }, "\uBC1C\uD589"))));
@@ -2812,16 +2815,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useInput", function() { return useInput; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _reducer_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reducer/user */ "./reducer/user.js");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _reducer_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducer/user */ "./reducer/user.js");
 var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\pages\\signup.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -2849,7 +2849,7 @@ const Signup = () => {
   const [userId, onChangeId] = useInput('');
   const [nick, onChangeNick] = useInput('');
   const [password, onChangePassword] = useInput('');
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
   const onChangePasswordCheck = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     setPasswordError(e.target.value !== password);
     setPasswordCheck(e.target.value);
@@ -2862,7 +2862,7 @@ const Signup = () => {
     }
 
     dispatch({
-      type: _reducer_user__WEBPACK_IMPORTED_MODULE_4__["SIGN_UP_REQUEST"],
+      type: _reducer_user__WEBPACK_IMPORTED_MODULE_3__["SIGN_UP_REQUEST"],
       data: {
         nick,
         userId,
@@ -2871,7 +2871,7 @@ const Signup = () => {
     });
     history.back();
   }, [nick, userId, password, passwordCheck]);
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Form"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Form"], {
     onSubmit: onSubmit,
     style: {
       position: 'absolute',
@@ -2903,7 +2903,7 @@ const Signup = () => {
       lineNumber: 51
     },
     __self: undefined
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
+  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
     name: "user-nick",
     value: nick,
     required: true,
@@ -2941,7 +2941,7 @@ const Signup = () => {
       lineNumber: 57
     },
     __self: undefined
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
+  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
     name: "user-id",
     value: userId,
     onChange: onChangeId,
@@ -2979,7 +2979,7 @@ const Signup = () => {
       lineNumber: 63
     },
     __self: undefined
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
+  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
     name: "user-password",
     type: "password",
     value: password,
@@ -3024,7 +3024,7 @@ const Signup = () => {
       lineNumber: 70
     },
     __self: undefined
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
+  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
     name: "user-password-check",
     type: "password",
     value: passwordCheck,
@@ -3059,7 +3059,7 @@ const Signup = () => {
       lineNumber: 75
     },
     __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     type: "primary",
     htmlType: "submit",
     style: {
@@ -3250,9 +3250,14 @@ const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
 
     case SIGN_UP_SUCCESS:
       {
-        return _objectSpread({}, state, {
-          user: action.data
-        });
+        alert('회원가입에 성공하셨습니다.');
+        return _objectSpread({}, state);
+      }
+
+    case SIGN_UP_FAILURE:
+      {
+        alert("회원가입에 실패하였습니다.");
+        return _objectSpread({}, state);
       }
 
     case LOG_IN_REQUEST:
@@ -3265,6 +3270,12 @@ const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
         return _objectSpread({}, state, {
           user: action.data
         });
+      }
+
+    case LOG_IN_FAILURE:
+      {
+        alert("로그인에 실패했습니다. ID와 비밀번호를 확인해주세요.");
+        return _objectSpread({}, state);
       }
 
     case LOG_OUT_REQUEST:

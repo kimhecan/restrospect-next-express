@@ -4,6 +4,7 @@ import PropsTypes from 'prop-types';
 import { Menu, Input, Row, Col } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { LOG_OUT_REQUEST } from '../reducer/user';
+import Calendars from '../components/Calendar';
 const { SubMenu } = Menu;
 
 const AppLayout = ({ children }) => {
@@ -32,7 +33,7 @@ const AppLayout = ({ children }) => {
         <Menu.Item key="search">
           <Input.Search enterButton style={{ verticalAlign: 'middle', backgroundColor: '#000066' }}  />
         </Menu.Item>
-        <SubMenu title={ <span className="submenu" style={{color: 'white'}}>{user.nick ? user.nick : ''}</span>} style={{ float: 'right' }}>
+        <SubMenu title={ <span className="submenu" style={{color: 'white'}}>{user ? user.nick : ''}</span>} style={{ float: 'right' }}>
           <Menu.Item key="private">개인정보</Menu.Item>
           <Menu.Item key="logout">로그아웃</Menu.Item>
         </SubMenu>

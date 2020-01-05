@@ -6,11 +6,7 @@ import PostCardContent from './PostCardContent';
 
 const { Meta } = Card;
 const PostCard = ({ post }) => {
-  console.log(post);
-  const dispatch = useDispatch();
-
   
-
   return (
     <>
       <Card

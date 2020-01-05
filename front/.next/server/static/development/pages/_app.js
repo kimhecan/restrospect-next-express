@@ -113,8 +113,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _reducer_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reducer/user */ "./reducer/user.js");
+/* harmony import */ var _components_Calendar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Calendar */ "./components/Calendar.js");
 var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\components\\AppLayout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -159,21 +161,21 @@ const AppLayout = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
     key: "home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 32
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 32
     },
     __self: undefined
   }, __jsx("a", {
@@ -182,14 +184,14 @@ const AppLayout = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 32
     },
     __self: undefined
   }, "RESTROPECT"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
     key: "search",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 33
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"].Search, {
@@ -200,7 +202,7 @@ const AppLayout = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 34
     },
     __self: undefined
   })), __jsx(SubMenu, {
@@ -211,37 +213,37 @@ const AppLayout = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 36
       },
       __self: undefined
-    }, user.nick ? user.nick : ''),
+    }, user ? user.nick : ''),
     style: {
       float: 'right'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 36
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
     key: "private",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 37
     },
     __self: undefined
   }, "\uAC1C\uC778\uC815\uBCF4"), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
     key: "logout",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 38
     },
     __self: undefined
   }, "\uB85C\uADF8\uC544\uC6C3"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Row"], {
     gutter: 8,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 41
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Col"], {
@@ -249,7 +251,7 @@ const AppLayout = ({
     md: 16,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 42
     },
     __self: undefined
   }, children), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Col"], {
@@ -257,7 +259,7 @@ const AppLayout = ({
     md: 8,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 45
     },
     __self: undefined
   }, "\uB2EC\uB825\uC608\uC815")));
@@ -268,6 +270,202 @@ AppLayout.propTypes = {
 }; //<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 /* harmony default export */ __webpack_exports__["default"] = (AppLayout);
+
+/***/ }),
+
+/***/ "./components/Calendar.js":
+/*!********************************!*\
+  !*** ./components/Calendar.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
+
+var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\components\\Calendar.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+const {
+  Group,
+  Button
+} = antd__WEBPACK_IMPORTED_MODULE_2__["Radio"];
+
+const Calendars = () => {
+  return __jsx("div", {
+    style: {
+      width: 300,
+      border: '1px solid #d9d9d9',
+      borderRadius: 4
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Calendar"], {
+    fullscreen: false,
+    headerRender: ({
+      value,
+      type,
+      onChange,
+      onTypeChange
+    }) => {
+      const start = 0;
+      const end = 12;
+      const monthOptions = [];
+      const current = value.clone();
+      const localeData = value.localeData();
+      const months = [];
+
+      for (let i = 0; i < 12; i++) {
+        current.month(i);
+        months.push(localeData.monthsShort(current));
+      }
+
+      for (let index = start; index < end; index++) {
+        monthOptions.push(__jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Select"].Option, {
+          className: "month-item",
+          key: `${index}`,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26
+          },
+          __self: undefined
+        }, months[index]));
+      }
+
+      const month = value.month();
+      const year = value.year();
+      const options = [];
+
+      for (let i = year - 10; i < year + 10; i += 1) {
+        options.push(__jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Select"].Option, {
+          key: i,
+          value: i,
+          className: "year-item",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37
+          },
+          __self: undefined
+        }, i));
+      }
+
+      return __jsx("div", {
+        style: {
+          padding: 10
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43
+        },
+        __self: undefined
+      }, __jsx("div", {
+        style: {
+          marginBottom: '10px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44
+        },
+        __self: undefined
+      }, "Custom header "), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+        type: "flex",
+        justify: "space-between",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        },
+        __self: undefined
+      }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46
+        },
+        __self: undefined
+      }, __jsx(Group, {
+        size: "small",
+        onChange: e => onTypeChange(e.target.value),
+        value: type,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        },
+        __self: undefined
+      }, __jsx(Button, {
+        value: "month",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: undefined
+      }, "Month"), __jsx(Button, {
+        value: "year",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49
+        },
+        __self: undefined
+      }, "Year"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: undefined
+      }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Select"], {
+        size: "small",
+        dropdownMatchSelectWidth: false,
+        className: "my-year-select",
+        onChange: newYear => {
+          const now = value.clone().year(newYear);
+          onChange(now);
+        },
+        value: String(year),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: undefined
+      }, options)), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: undefined
+      }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Select"], {
+        size: "small",
+        dropdownMatchSelectWidth: false,
+        value: String(month),
+        onChange: selectedMonth => {
+          const newValue = value.clone();
+          newValue.month(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(selectedMonth, 10));
+          onChange(newValue);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: undefined
+      }, monthOptions))));
+    },
+    onPanelChange: onPanelChange,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Calendars);
 
 /***/ }),
 
@@ -367,6 +565,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-prope
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "core-js/library/fn/object/keys");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/parse-int */ "core-js/library/fn/parse-int");
 
 /***/ }),
 
@@ -2766,9 +2975,14 @@ const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
 
     case SIGN_UP_SUCCESS:
       {
-        return _objectSpread({}, state, {
-          user: action.data
-        });
+        alert('회원가입에 성공하셨습니다.');
+        return _objectSpread({}, state);
+      }
+
+    case SIGN_UP_FAILURE:
+      {
+        alert("회원가입에 실패하였습니다.");
+        return _objectSpread({}, state);
       }
 
     case LOG_IN_REQUEST:
@@ -2781,6 +2995,12 @@ const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
         return _objectSpread({}, state, {
           user: action.data
         });
+      }
+
+    case LOG_IN_FAILURE:
+      {
+        alert("로그인에 실패했습니다. ID와 비밀번호를 확인해주세요.");
+        return _objectSpread({}, state);
       }
 
     case LOG_OUT_REQUEST:
@@ -2867,7 +3087,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function addPostAPI(postData) {
-  console.log(postData);
   return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/post/', postData, {
     withCredentials: true
   });
@@ -2876,6 +3095,7 @@ function addPostAPI(postData) {
 function* addPost(action) {
   try {
     const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(addPostAPI, action);
+    console.log(result.data);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
       type: _reducer_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_SUCCESS"],
       data: result.data
@@ -2953,8 +3173,7 @@ function* signUp(action) {
     // loginAPI 실패
     console.error(e);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      type: _reducer_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_FAILURE"],
-      error: e
+      type: _reducer_user__WEBPACK_IMPORTED_MODULE_2__["SIGN_UP_FAILURE"]
     });
   }
 }
@@ -2977,7 +3196,6 @@ function* logIn(action) {
       data: result.data
     });
   } catch (e) {
-    console.error(e);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
       type: _reducer_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_FAILURE"]
     });
@@ -3181,6 +3399,17 @@ module.exports = require("core-js/library/fn/object/get-own-property-symbols");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/object/keys");
+
+/***/ }),
+
+/***/ "core-js/library/fn/parse-int":
+/*!***********************************************!*\
+  !*** external "core-js/library/fn/parse-int" ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/parse-int");
 
 /***/ }),
 

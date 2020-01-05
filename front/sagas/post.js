@@ -4,8 +4,6 @@ import { ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, LOAD_POST_REQUEST
 
 
 function addPostAPI(postData) {
-  console.log(postData);
-  
   return axios.post('/post/', postData, {
     withCredentials: true,
   });
@@ -14,6 +12,7 @@ function addPostAPI(postData) {
 function * addPost(action) {
   try {
     const result = yield call(addPostAPI, action);
+    console.log(result.data);
     yield put({
       type: ADD_POST_SUCCESS,
       data: result.data,

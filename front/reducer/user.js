@@ -3,7 +3,7 @@ export const inintialState = {
     nick: null,
     userId: null,
     password: null
-  }
+  },
 };
 
 export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
@@ -31,9 +31,15 @@ export default (state = inintialState, action) => {
       }
     }
     case SIGN_UP_SUCCESS: {
+      alert('회원가입에 성공하셨습니다.')
       return {
         ...state,
-        user: action.data,
+      }
+    }
+    case SIGN_UP_FAILURE: {
+      alert("회원가입에 실패하였습니다.")
+      return {
+        ...state,
       }
     }
     case LOG_IN_REQUEST: {
@@ -45,6 +51,12 @@ export default (state = inintialState, action) => {
       return {
         ...state,
         user: action.data,
+      }
+    }
+    case LOG_IN_FAILURE: {
+      alert("로그인에 실패했습니다. ID와 비밀번호를 확인해주세요.")
+      return {
+        ...state,
       }
     }
     case LOG_OUT_REQUEST: {

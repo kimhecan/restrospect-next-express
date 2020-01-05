@@ -1,7 +1,6 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import Link from 'next/link'
+import React, { useState, useCallback  } from 'react';
 import { Form, Input, Button } from 'antd';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { SIGN_UP_REQUEST } from '../reducer/user'; 
 
 export const useInput = (initValue = null) => {
@@ -20,6 +19,7 @@ const Signup = () => {
   const [nick, onChangeNick] = useInput('');
   const [password, onChangePassword] = useInput('');
   const dispatch = useDispatch();
+
 
   const onChangePasswordCheck = useCallback((e) => {
     setPasswordError(e.target.value !== password);
