@@ -1,6 +1,6 @@
 import { all, fork, put, takeEvery, call } from 'redux-saga/effects';
 import axios from 'axios';
-import { ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, LOAD_POST_REQUEST, LOAD_POST_SUCCESS } from '../reducer/post';
+import { ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, LOAD_POST_REQUEST, LOAD_POST_SUCCESS, DELETE_POST_SUCCESS, DELETE_POST_REQUEST, DELETE_POST_FAILRUE, LOAD_POST_FAILURE } from '../reducer/post';
 
 
 function addPostAPI(postData) {
@@ -41,12 +41,15 @@ function loadPostAPI() {
 function* loadPost() {
   try {
     const result = yield call(loadPostAPI);
+    console.log(result.data);
     yield put({
       type: LOAD_POST_SUCCESS,
       data: result.data
     })
-  } catch (error) {
-    
+  } catch (e) {
+    yield put({
+      type: LOAD_POST_FAILURE
+    })
   }
 }
 
@@ -54,10 +57,39 @@ function* watchLoadPost() {
   yield takeEvery(LOAD_POST_REQUEST, loadPost);
 }
 
+function deletePostAPI(postId) {
+  console.log(postId, 'postId');
+  
+  return axios.delete(`/post/${postId}`, {
+    withCredentials: true,
+  });
+}
+
+function* deletePost(action) {
+  try {
+    const result = yield call(deletePostAPI, action.data);
+    yield put({
+      type: DELETE_POST_SUCCESS,
+      data: result.data
+    })
+  } catch (e) {
+    yield put({
+      type: DELETE_POST_FAILRUE,
+      error: e,
+    })
+    console.error(e);
+    
+  }
+}
+
+function* watchDeletePost() {
+  yield takeEvery(DELETE_POST_REQUEST, deletePost);
+}
 
 export default function* postSaga() {
   yield all([
     fork(watchAddPost),
     fork(watchLoadPost),
+    fork(watchDeletePost),
   ])
 }

@@ -1,3 +1,5 @@
+import produce from 'immer';
+
 export const initalState = {
   mainPosts: [], // 화면에 보일 포스트들
 }
@@ -20,35 +22,44 @@ export const LOAD_POST_REQUEST = 'LOAD_POST_REQUEST';
 export const LOAD_POST_SUCCESS = 'LOAD_POST_SUCCESS';
 export const LOAD_POST_FAILURE = 'LOAD_POST_FAILURE';
 
+export const DELETE_POST_REQUEST = 'DELETE_POST_REQUEST';
+export const DELETE_POST_SUCCESS = 'DELETE_POST_SUCCESS';
+export const DELETE_POST_FAILRUE = 'DELETE_POST_FAILRUE';
+
+
+
 
 export default (state = initalState, action) => {
-  switch (action.type) {
-    case LOAD_POST_REQUEST: {
-      return {
-        ...state,
+  return produce(state, (draft) => {
+    switch (action.type) {
+      case LOAD_POST_REQUEST: {
+        break;
+      }
+      case ADD_POST_REQUEST: {
+        break;
+      }
+      case DELETE_POST_REQUEST: {
+        break;
+      }
+      case LOAD_POST_SUCCESS: {
+        action.data.forEach((d) => {
+          console.log(d, 'D');
+          draft.mainPosts.unshift(d);
+        })
+        break;
+      }
+      case ADD_POST_SUCCESS: {
+        draft.mainPosts.unshift(action.data);
+        break;
+      }
+      case DELETE_POST_SUCCESS: {
+        const index = draft.mainPosts.findIndex( v => v.id == action.data)
+        draft.mainPosts.splice(index, 1);
+        break;
+      }
+      default: {
+        break;
       }
     }
-    case LOAD_POST_SUCCESS: {
-      return {
-        ...state,
-        mainPosts: action.data,
-      }
-    }
-    case ADD_POST_REQUEST: {
-      return {
-        ...state,
-      }
-    }
-    case ADD_POST_SUCCESS: {
-      return {
-        ...state,
-        mainPosts: [action.data, ...state.mainPosts],
-      }
-    }
-    default: {
-      return {
-        ...state,
-      }
-    }
-  }
+  })
 }
