@@ -43,7 +43,7 @@ const AppLayout = ({ children }) => {
           {children}
         </Col>
         <Col xs={24} md={8}>
-          달력예정
+          {user.nick ?  <Calendars /> : '' }
         </Col>
       </Row>
     </>

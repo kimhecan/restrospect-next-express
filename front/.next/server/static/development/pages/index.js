@@ -216,37 +216,37 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const PostCardContent = ({
   postData
 }) => {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, postData ? postData.split(/(\<[^\>]+\>)/g).map(v => {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, postData.split(/(\<[^\>]+\>)/g).map((v, i) => {
     if (v.match(/\<[^\>]+\>/)) {
       return __jsx("strong", {
-        key: v,
+        key: i,
         style: {
           color: 'black',
           fontSize: '20px'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 10
         },
         __self: undefined
       }, v);
     }
 
-    return v.split('\n').map(value => {
+    return v.split('\n').map((value, i) => {
       return __jsx("p", {
         style: {
           color: 'black',
           fontSize: '15px'
         },
-        key: value,
+        key: i,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 14
         },
         __self: undefined
       }, value);
     });
-  }) : undefined);
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (PostCardContent);
@@ -268,8 +268,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _pages_signup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/signup */ "./pages/signup.js");
-/* harmony import */ var _reducer_post__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reducer/post */ "./reducer/post.js");
+/* harmony import */ var _reducer_post__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducer/post */ "./reducer/post.js");
 var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\components\\PostForm.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -277,11 +276,21 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+const useInput = (initValue = null) => {
+  const {
+    0: value,
+    1: setter
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initValue);
+  const handler = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
+    setter(e.target.value);
+  }, []);
+  return [value, setter, handler];
+};
 
 const PostForm = () => {
-  const [firstText, changeFirstText] = Object(_pages_signup__WEBPACK_IMPORTED_MODULE_3__["useInput"])('');
-  const [secondText, changeSecondText] = Object(_pages_signup__WEBPACK_IMPORTED_MODULE_3__["useInput"])('');
-  const [thridText, changeThridText] = Object(_pages_signup__WEBPACK_IMPORTED_MODULE_3__["useInput"])('');
+  const [firstText, setFirstText, changeFirstText] = useInput('');
+  const [secondText, setSecondText, changeSecondText] = useInput('');
+  const [thridText, setThridText, changeThridText] = useInput('');
   const {
     mainPosts
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.post);
@@ -289,7 +298,7 @@ const PostForm = () => {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     if (mainPosts !== []) {
       dispatch({
-        type: _reducer_post__WEBPACK_IMPORTED_MODULE_4__["LOAD_POST_REQUEST"]
+        type: _reducer_post__WEBPACK_IMPORTED_MODULE_3__["LOAD_POST_REQUEST"]
       });
     }
   }, []);
@@ -303,11 +312,12 @@ const PostForm = () => {
 
     const text = `<어제 한 일> ${firstText} <오늘 할 일> ${secondText} <어제의 문제점> ${thridText}`;
     dispatch({
-      type: _reducer_post__WEBPACK_IMPORTED_MODULE_4__["ADD_POST_REQUEST"],
+      type: _reducer_post__WEBPACK_IMPORTED_MODULE_3__["ADD_POST_REQUEST"],
       data: text
-    }); // firstText = ''
-    // secondText = ''
-    // thridText = ''
+    });
+    setFirstText('');
+    setSecondText('');
+    setThridText('');
   };
 
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Form"], {
@@ -318,7 +328,7 @@ const PostForm = () => {
     encType: "multipart/form-data",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 51
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
@@ -332,7 +342,7 @@ const PostForm = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 52
     },
     __self: undefined
   }, '<어제한일>', "}"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
@@ -346,7 +356,7 @@ const PostForm = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 53
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
@@ -360,19 +370,19 @@ const PostForm = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 54
     },
     __self: undefined
   }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 54
     },
     __self: undefined
   }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 54
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -386,7 +396,7 @@ const PostForm = () => {
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 55
     },
     __self: undefined
   }, "\uBC1C\uD589")));

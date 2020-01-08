@@ -1,16 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Form, Input, Button } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { useInput } from '../pages/signup';
 import { ADD_POST_REQUEST, LOAD_POST_REQUEST } from '../reducer/post'
+
+const useInput = (initValue = null) => {
+  const [value, setter] = useState(initValue);
+  const handler = useCallback((e) => {
+    setter(e.target.value);
+  }, []);
+  return [value, setter, handler];
+};
 
 
 const PostForm = () => {
 
-  const [firstText, changeFirstText] = useInput('');
-  const [secondText, changeSecondText] = useInput('');
-  const [thridText, changeThridText] = useInput('');
+  const [firstText, setFirstText, changeFirstText] = useInput('');
+  const [secondText, setSecondText, changeSecondText] = useInput('');
+  const [thridText, setThridText,changeThridText] = useInput('');
 
   const { mainPosts } = useSelector(state => state.post);
 
@@ -34,9 +41,9 @@ const PostForm = () => {
       type: ADD_POST_REQUEST,
       data: text,
     });
-    // firstText = ''
-    // secondText = ''
-    // thridText = ''
+    setFirstText('');
+    setSecondText('');
+    setThridText('');
   }
 
   return (

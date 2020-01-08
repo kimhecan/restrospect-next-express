@@ -262,7 +262,13 @@ const AppLayout = ({
       lineNumber: 45
     },
     __self: undefined
-  }, "\uB2EC\uB825\uC608\uC815")));
+  }, user.nick ? __jsx(_components_Calendar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: undefined
+  }) : '')));
 };
 
 AppLayout.propTypes = {
@@ -301,9 +307,10 @@ const {
 const Calendars = () => {
   return __jsx("div", {
     style: {
-      width: 300,
+      width: 500,
       border: '1px solid #d9d9d9',
-      borderRadius: 4
+      borderRadius: 4,
+      marginTop: '30px'
     },
     __source: {
       fileName: _jsxFileName,
@@ -455,8 +462,8 @@ const Calendars = () => {
         },
         __self: undefined
       }, monthOptions))));
-    },
-    onPanelChange: onPanelChange,
+    } //onPanelChange={onPanelChange}
+    ,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9

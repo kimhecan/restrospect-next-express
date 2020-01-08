@@ -5,7 +5,7 @@ const { Group, Button } = Radio;
 
 const Calendars = () => {
   return (
-    <div style={{ width: 300, border: '1px solid #d9d9d9', borderRadius: 4 }}>
+    <div style={{ width: 500, border: '1px solid #d9d9d9', borderRadius: 4, marginTop: '30px' }}>
     <Calendar
       fullscreen={false}
       headerRender={({ value, type, onChange, onTypeChange }) => {
@@ -81,7 +81,7 @@ const Calendars = () => {
           </div>
         );
       }}
-      onPanelChange={onPanelChange}
+      //onPanelChange={onPanelChange}
     />
   </div>
   )
