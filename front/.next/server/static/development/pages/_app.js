@@ -294,9 +294,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _DateCell__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DateCell */ "./components/DateCell.js");
 
 var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\components\\Calendar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 const {
@@ -305,16 +307,32 @@ const {
 } = antd__WEBPACK_IMPORTED_MODULE_2__["Radio"];
 
 const Calendars = () => {
+  const onSelect = date => {
+    console.log(date, 'date');
+  };
+
+  const dateCellRender = cell => {
+    return __jsx(_DateCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      date: cell,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: undefined
+    });
+  };
+
   return __jsx("div", {
     style: {
       width: 500,
+      height: '400px',
       border: '1px solid #d9d9d9',
       borderRadius: 4,
       marginTop: '30px'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 20
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Calendar"], {
@@ -343,7 +361,7 @@ const Calendars = () => {
           key: `${index}`,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 26
+            lineNumber: 39
           },
           __self: undefined
         }, months[index]));
@@ -360,11 +378,15 @@ const Calendars = () => {
           className: "year-item",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 50
           },
           __self: undefined
         }, i));
-      }
+      } // console.log(monthOptions[0], 'monthOptions[0]');
+      // console.log(monthOptions[0]._source.lineNumber, 'monthOptions[0]._source.lineNumber');
+      // console.log(monthOptions[1]._source.lineNumber, 'monthOptions[1]._source.lineNumber');
+      // console.log(monthOptions[2]._source.lineNumber, 'monthOptions[2]._source.lineNumber');
+
 
       return __jsx("div", {
         style: {
@@ -372,30 +394,31 @@ const Calendars = () => {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 61
         },
         __self: undefined
       }, __jsx("div", {
         style: {
-          marginBottom: '10px'
+          marginBottom: '10px',
+          textAlign: 'center'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 62
         },
         __self: undefined
-      }, "Custom header "), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+      }, "Check Calendar"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Row"], {
         type: "flex",
         justify: "space-between",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 63
         },
         __self: undefined
       }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 64
         },
         __self: undefined
       }, __jsx(Group, {
@@ -404,27 +427,27 @@ const Calendars = () => {
         value: type,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 65
         },
         __self: undefined
       }, __jsx(Button, {
         value: "month",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 66
         },
         __self: undefined
       }, "Month"), __jsx(Button, {
         value: "year",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 67
         },
         __self: undefined
       }, "Year"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 70
         },
         __self: undefined
       }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Select"], {
@@ -438,13 +461,13 @@ const Calendars = () => {
         value: String(year),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 71
         },
         __self: undefined
       }, options)), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 84
         },
         __self: undefined
       }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Select"], {
@@ -458,21 +481,91 @@ const Calendars = () => {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 85
         },
         __self: undefined
       }, monthOptions))));
-    } //onPanelChange={onPanelChange}
-    ,
+    },
+    mode: "month",
+    onSelect: onSelect,
+    dateCellRender: dateCellRender,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 21
     },
     __self: undefined
   }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Calendars);
+
+/***/ }),
+
+/***/ "./components/DateCell.js":
+/*!********************************!*\
+  !*** ./components/DateCell.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\components\\DateCell.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+ //postsDate 2020-01-09
+//calendatCell 01 09 2020
+
+const DateCell = ({
+  date
+}) => {
+  const month = ["None", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const {
+    mainPosts
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
+  const postsDate = mainPosts.map(v => String(v.createdAt).substring(0, 10));
+  let calendarCell = String(date._d).substring(4, 15);
+  let index = 0;
+  let isPosted = false;
+
+  for (let i = 0; i <= 12; i++) {
+    if (calendarCell.substring(0, 3) == month[i]) {
+      if (Number(month.indexOf(month[i])) < 10) {
+        index = '0' + month.indexOf(month[i]);
+      } else {
+        index = month.indexOf(month[i]);
+      }
+
+      calendarCell = calendarCell.replace(calendarCell.substring(0, 3), index);
+    }
+  }
+
+  for (let i = 0; i < postsDate.length; i++) {
+    if (postsDate[i].substring(0, 4) == calendarCell.substring(6, 10) && postsDate[i].substring(5, 7) == calendarCell.substring(0, 2) && postsDate[i].substring(8, 10) == calendarCell.substring(3, 5)) {
+      isPosted = true;
+    }
+  }
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, isPosted ? __jsx("div", {
+    style: {
+      backgroundColor: '#00f603',
+      width: '65px',
+      height: '3px',
+      marginTop: '0px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: undefined
+  }) : null);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (DateCell);
 
 /***/ }),
 
@@ -2876,8 +2969,8 @@ const DELETE_POST_FAILRUE = 'DELETE_POST_FAILRUE';
 
       case LOAD_POST_SUCCESS:
         {
+          draft.mainPosts = [];
           action.data.forEach(d => {
-            console.log(d, 'D');
             draft.mainPosts.unshift(d);
           });
           break;

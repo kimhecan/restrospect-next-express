@@ -30,8 +30,8 @@ const PostCard = ({ post }) => {
         ]}
       >
         <Meta
-          title="게시글"
-          description={<PostCardContent postData={post.content} />}
+          title={post.createdAt.substring(0,10)}
+          description={<PostCardContent postData={post} />}
         />
       </Card>
     </>

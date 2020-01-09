@@ -42,8 +42,8 @@ export default (state = initalState, action) => {
         break;
       }
       case LOAD_POST_SUCCESS: {
+        draft.mainPosts = [];
         action.data.forEach((d) => {
-          console.log(d, 'D');
           draft.mainPosts.unshift(d);
         })
         break;

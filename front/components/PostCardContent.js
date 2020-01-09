@@ -2,9 +2,13 @@ import React from 'react';
 import PropsTypes from 'prop-types';
 
 const PostCardContent = ({ postData }) => {
+
+  const content = postData.content;
+
+  
   return (
     <>
-      {postData.split(/(\<[^\>]+\>)/g).map((v, i) => {
+      {content.split(/(\<[^\>]+\>)/g).map((v, i) => {
           if (v.match(/\<[^\>]+\>/)) {
             return (
               <strong key={i} style={{color: 'black', fontSize: '20px'}}>{v}</strong>
