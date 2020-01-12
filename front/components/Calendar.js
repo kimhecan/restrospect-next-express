@@ -7,17 +7,12 @@ const { Group, Button } = Radio;
 
 const Calendars = () => {
 
-
-  const onSelect = (date) => {
-    console.log(date, 'date');    
-  }
-
   const dateCellRender = (cell) => {
     return <DateCell date={cell}/>
   }
 
   return (
-    <div style={{ width: 500, height: '400px', border: '1px solid #d9d9d9', borderRadius: 4, marginTop: '30px' }}>
+    <div style={{ width: 500, height: '400px', border: '1px solid #d9d9d9', borderRadius: 4, marginTop: '50px' }}>
     <Calendar
       fullscreen={false}
       headerRender={({ value, type, onChange, onTypeChange }) => {
@@ -52,10 +47,6 @@ const Calendars = () => {
             </Select.Option>,
           );
         }
-        // console.log(monthOptions[0], 'monthOptions[0]');
-        // console.log(monthOptions[0]._source.lineNumber, 'monthOptions[0]._source.lineNumber');
-        // console.log(monthOptions[1]._source.lineNumber, 'monthOptions[1]._source.lineNumber');
-        // console.log(monthOptions[2]._source.lineNumber, 'monthOptions[2]._source.lineNumber');
 
         return (
           <div style={{ padding: 10 }}>
@@ -99,8 +90,6 @@ const Calendars = () => {
           </div>
         );
       }}
-      mode="month"
-      onSelect={onSelect}
       dateCellRender={dateCellRender}
     />
   </div>

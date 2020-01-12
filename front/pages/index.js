@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { Empty, Row, Col } from 'antd';
 import PostForm from '../components/PostForm';
 import Login from '../components/login';
-import { useSelector } from 'react-redux';
 import PostCard from '../components/PostCard';
-import { LOAD_POST_REQUEST } from '../reducer/post';
+import Introduce from '../components/Intoduce';
 
 const Home = () => {
 
   const { user } = useSelector(state => state.user);
   const { mainPosts } = useSelector(state => state.post);
+
   return (
     <>
       {user.userId !== null  ? 
@@ -16,14 +18,22 @@ const Home = () => {
         <PostForm />
         <br />
         <br />
-        {mainPosts.map((v) => {
+        { mainPosts.length ? mainPosts.map((v) => {
           return (
             <PostCard key={v.id} post={v} />
           )
-        })}
+        })
+        :
+        <Empty image={Empty.PRESENTED_IMAGE_SIMPLE}  style={{ width: '1000px'}}/>
+       }
+
       </div>
       :
-      <Login />}
+      <div>
+        <Login/>
+        <Introduce />
+      </div>
+      }
     </>
   )
 }

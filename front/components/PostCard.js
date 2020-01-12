@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Button, Card, Form, Icon, List } from 'antd';
+import { Card, Icon } from 'antd';
 import PropsTypes from 'prop-types';
 import PostCardContent from './PostCardContent';
 import { useDispatch } from 'react-redux';
@@ -24,13 +24,14 @@ const PostCard = ({ post }) => {
       <Card
         style={{ margin: '30px', width: '1000px' }}
         actions={[
-          <Icon type="setting" key="setting" />,
+          //<Icon type="setting" key="setting" />,
+          <Icon type="smile" key="setting" />,
           <Icon type="edit" key="edit" />,
           <Icon type="delete" key="delete" onClick={onDeleteBtn} />,
         ]}
       >
         <Meta
-          title={post.createdAt.substring(0,10)}
+          title={<p style={{color:'gray'}}>{post.createdAt.substring(0,10)}</p>}
           description={<PostCardContent postData={post} />}
         />
       </Card>

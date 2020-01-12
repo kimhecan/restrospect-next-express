@@ -17,7 +17,6 @@ router.get('/', (req, res) => { // /user/ 사용자정보가져오기 loadUser
 
 router.post('/signup', async (req, res, next) => { // 회원가입
   try {
-    console.log(req.body.userId);
     const exUser = await db.User.findOne({
       where: {
         userId: req.body.userId,

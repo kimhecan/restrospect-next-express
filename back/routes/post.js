@@ -27,10 +27,23 @@ router.post('/', isLoggedIn, async (req, res, next) => {
 
 router.get('/', isLoggedIn, async (req, res, next) => { //조회
   try {
-    const posts = await db.Post.findAll({
-      where: {
-        UserId: req.user.dataValues.id
+    let where = {};
+    if (parseInt(req.query.lastId, 10)) {
+      where = {
+        UserId: req.user.dataValues.id,
+        id: {
+          [db.Sequelize.Op.lt]: parseInt(req.query.lastId, 10)
+        }
       }
+    } else {
+      where = {
+        UserId: req.user.dataValues.id,
+      }
+    }
+    const posts = await db.Post.findAll({
+      where,
+      order: [['createdAt', 'DESC']], 
+      limit: parseInt(req.query.limit, 10),
     });
     if(posts) {
       res.json(posts);

@@ -150,6 +150,8 @@ const AppLayout = ({
       });
     }
 
+    if (current === 'private') {}
+
     setCurrent('');
   }, [current]);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"], {
@@ -161,21 +163,21 @@ const AppLayout = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 35
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
     key: "home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 36
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 36
     },
     __self: undefined
   }, __jsx("a", {
@@ -184,14 +186,14 @@ const AppLayout = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 36
     },
     __self: undefined
   }, "RESTROPECT"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
     key: "search",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 37
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"].Search, {
@@ -202,7 +204,7 @@ const AppLayout = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 38
     },
     __self: undefined
   })), __jsx(SubMenu, {
@@ -213,7 +215,7 @@ const AppLayout = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 40
       },
       __self: undefined
     }, user ? user.nick : ''),
@@ -222,28 +224,54 @@ const AppLayout = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 40
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
     key: "private",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 41
     },
     __self: undefined
-  }, "\uAC1C\uC778\uC815\uBCF4"), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
-    key: "logout",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: undefined
-  }, "\uB85C\uADF8\uC544\uC6C3"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Row"], {
-    gutter: 8,
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/profile",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 41
+    },
+    __self: undefined
+  }, __jsx("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }, "\uAC1C\uC778\uC815\uBCF4"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
+    key: "logout",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, __jsx("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, "\uB85C\uADF8\uC544\uC6C3"))))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Row"], {
+    gutter: 8,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Col"], {
@@ -251,7 +279,7 @@ const AppLayout = ({
     md: 16,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 46
     },
     __self: undefined
   }, children), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Col"], {
@@ -259,13 +287,13 @@ const AppLayout = ({
     md: 8,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 49
     },
     __self: undefined
   }, user.nick ? __jsx(_components_Calendar__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 50
     },
     __self: undefined
   }) : '')));
@@ -307,16 +335,12 @@ const {
 } = antd__WEBPACK_IMPORTED_MODULE_2__["Radio"];
 
 const Calendars = () => {
-  const onSelect = date => {
-    console.log(date, 'date');
-  };
-
   const dateCellRender = cell => {
     return __jsx(_DateCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
       date: cell,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 11
       },
       __self: undefined
     });
@@ -328,11 +352,11 @@ const Calendars = () => {
       height: '400px',
       border: '1px solid #d9d9d9',
       borderRadius: 4,
-      marginTop: '30px'
+      marginTop: '50px'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 15
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Calendar"], {
@@ -361,7 +385,7 @@ const Calendars = () => {
           key: `${index}`,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 34
           },
           __self: undefined
         }, months[index]));
@@ -378,15 +402,11 @@ const Calendars = () => {
           className: "year-item",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 45
           },
           __self: undefined
         }, i));
-      } // console.log(monthOptions[0], 'monthOptions[0]');
-      // console.log(monthOptions[0]._source.lineNumber, 'monthOptions[0]._source.lineNumber');
-      // console.log(monthOptions[1]._source.lineNumber, 'monthOptions[1]._source.lineNumber');
-      // console.log(monthOptions[2]._source.lineNumber, 'monthOptions[2]._source.lineNumber');
-
+      }
 
       return __jsx("div", {
         style: {
@@ -394,7 +414,7 @@ const Calendars = () => {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 52
         },
         __self: undefined
       }, __jsx("div", {
@@ -404,7 +424,7 @@ const Calendars = () => {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 53
         },
         __self: undefined
       }, "Check Calendar"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Row"], {
@@ -412,13 +432,13 @@ const Calendars = () => {
         justify: "space-between",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 54
         },
         __self: undefined
       }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 55
         },
         __self: undefined
       }, __jsx(Group, {
@@ -427,27 +447,27 @@ const Calendars = () => {
         value: type,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 56
         },
         __self: undefined
       }, __jsx(Button, {
         value: "month",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 57
         },
         __self: undefined
       }, "Month"), __jsx(Button, {
         value: "year",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 58
         },
         __self: undefined
       }, "Year"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 61
         },
         __self: undefined
       }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Select"], {
@@ -461,13 +481,13 @@ const Calendars = () => {
         value: String(year),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 62
         },
         __self: undefined
       }, options)), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Col"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 75
         },
         __self: undefined
       }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Select"], {
@@ -481,17 +501,15 @@ const Calendars = () => {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 76
         },
         __self: undefined
       }, monthOptions))));
     },
-    mode: "month",
-    onSelect: onSelect,
     dateCellRender: dateCellRender,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 16
     },
     __self: undefined
   }));
@@ -2954,6 +2972,7 @@ const DELETE_POST_FAILRUE = 'DELETE_POST_FAILRUE';
     switch (action.type) {
       case LOAD_POST_REQUEST:
         {
+          draft.mainPosts = action.lastId == 0 ? [] : draft.mainPosts;
           break;
         }
 
@@ -2969,10 +2988,10 @@ const DELETE_POST_FAILRUE = 'DELETE_POST_FAILRUE';
 
       case LOAD_POST_SUCCESS:
         {
-          draft.mainPosts = [];
-          action.data.forEach(d => {
-            draft.mainPosts.unshift(d);
-          });
+          draft.mainPosts = draft.mainPosts.concat(action.data); // action.data.forEach((d) => {
+          //   draft.mainPosts.unshift(d);
+          // })
+
           break;
         }
 
@@ -3212,15 +3231,16 @@ function* watchAddPost() {
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeEvery"])(_reducer_post__WEBPACK_IMPORTED_MODULE_2__["ADD_POST_REQUEST"], addPost);
 }
 
-function loadPostAPI() {
-  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`/post/`, {
+function loadPostAPI(lastId = 0, limit = 5) {
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`/post/?lastId=${lastId}&limit=${limit}`, {
     withCredentials: true
   });
 }
 
-function* loadPost() {
+function* loadPost(action) {
   try {
-    const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(loadPostAPI);
+    const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(loadPostAPI, action.lastId);
+    console.log(result.data, 'result.data');
     console.log(result.data);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
       type: _reducer_post__WEBPACK_IMPORTED_MODULE_2__["LOAD_POST_SUCCESS"],
@@ -3234,7 +3254,7 @@ function* loadPost() {
 }
 
 function* watchLoadPost() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeEvery"])(_reducer_post__WEBPACK_IMPORTED_MODULE_2__["LOAD_POST_REQUEST"], loadPost);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducer_post__WEBPACK_IMPORTED_MODULE_2__["LOAD_POST_REQUEST"], loadPost);
 }
 
 function deletePostAPI(postId) {

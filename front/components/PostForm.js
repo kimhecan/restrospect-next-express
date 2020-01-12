@@ -20,23 +20,41 @@ const PostForm = () => {
   const [thridText, setThridText,changeThridText] = useInput('');
 
   const { mainPosts } = useSelector(state => state.post);
+  console.log(mainPosts);
+  
 
   const dispatch = useDispatch();
+
+  const onScroll = () => {
+    if ( window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - 100 ) {
+      dispatch({
+        type: LOAD_POST_REQUEST,
+        lastId: mainPosts[mainPosts.length - 1].id
+      })
+    }  
+  }
 
   useEffect(() => {
     if (mainPosts !== []) {
       dispatch({
-        type: LOAD_POST_REQUEST,
+        type: LOAD_POST_REQUEST
       }) 
     }
   }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [mainPosts.length]);
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (!firstText || !secondText || !thridText) {
       return alert('게시글을 작성하세요.');
     }
-    const text = `<어제 한 일> ${firstText} <오늘 할 일> ${secondText} <어제의 문제점> ${thridText}`;
+    const text = `º오늘 한 일 ${firstText} º문제점 ${secondText} º내일 할 일 ${thridText}`;
     dispatch({
       type: ADD_POST_REQUEST,
       data: text,
@@ -45,13 +63,12 @@ const PostForm = () => {
     setSecondText('');
     setThridText('');
   }
-
   return (
     <>
       <Form onSubmit={onSubmit} style={{ margin: '30px' }} encType="multipart/form-data">
-        <Input.TextArea value={firstText}  onChange={changeFirstText} maxLength={500} placeholder="<어제 한 일>" style={{ height: '150px', width: "1000px"}}>{'<어제한일>'}}</Input.TextArea>
-        <Input.TextArea value={secondText} onChange={changeSecondText} maxLength={500} placeholder="<오늘 할 일>" style={{ height: '150px', width: "1000px"}}/>
-        <Input.TextArea value={thridText} onChange={changeThridText} maxLength={500} placeholder="<어제의 문제점>" style={{ height: '150px', width: "1000px"}}/><br /><br />
+        <Input.TextArea value={firstText}  onChange={changeFirstText} maxLength={500} placeholder="오늘 한 일(Facts (사실, 객관),Feelings (느낌, 주관),  Findings (배운 점)) " style={{ height: '150px', width: "1000px"}} />
+        <Input.TextArea value={secondText} onChange={changeSecondText} maxLength={500} placeholder="문제점" style={{ height: '150px', width: "1000px"}}/>
+        <Input.TextArea value={thridText} onChange={changeThridText} maxLength={500} placeholder="내일 할 일" style={{ height: '150px', width: "1000px"}}/><br /><br />
         <Button type="primary" style={{ backgroundColor: '#00001a', borderColor: '#00001a', width: "200px", marginLeft: "390px" }} htmlType="submit">발행</Button>
       </Form>
   </>

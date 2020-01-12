@@ -1,4 +1,4 @@
-import { all, fork, put, takeEvery, call } from 'redux-saga/effects';
+import { all, fork, put, takeEvery, call, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 import { ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, LOAD_POST_REQUEST, LOAD_POST_SUCCESS, DELETE_POST_SUCCESS, DELETE_POST_REQUEST, DELETE_POST_FAILRUE, LOAD_POST_FAILURE } from '../reducer/post';
 
@@ -31,16 +31,18 @@ function* watchAddPost() {
 }
 
 
-function loadPostAPI() {
-  return axios.get(`/post/`, {
+function loadPostAPI(lastId = 0, limit = 5) {
+  return axios.get(`/post/?lastId=${lastId}&limit=${limit}`, {
     withCredentials: true,
   })
 }
 
 
-function* loadPost() {
+function* loadPost(action) {
   try {
-    const result = yield call(loadPostAPI);
+    const result = yield call(loadPostAPI, action.lastId);
+    console.log(result.data, 'result.data');
+    
     console.log(result.data);
     yield put({
       type: LOAD_POST_SUCCESS,
@@ -54,7 +56,7 @@ function* loadPost() {
 }
 
 function* watchLoadPost() {
-  yield takeEvery(LOAD_POST_REQUEST, loadPost);
+  yield takeLatest(LOAD_POST_REQUEST, loadPost);
 }
 
 function deletePostAPI(postId) {

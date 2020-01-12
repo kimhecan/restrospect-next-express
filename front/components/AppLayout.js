@@ -22,6 +22,10 @@ const AppLayout = ({ children }) => {
       dispatch({
         type: LOG_OUT_REQUEST
       });
+
+    }
+    if(current === 'private') {
+      
     }
     setCurrent('');
   }, [current])
@@ -34,8 +38,8 @@ const AppLayout = ({ children }) => {
           <Input.Search enterButton style={{ verticalAlign: 'middle', backgroundColor: '#000066' }}  />
         </Menu.Item>
         <SubMenu title={ <span className="submenu" style={{color: 'white'}}>{user ? user.nick : ''}</span>} style={{ float: 'right' }}>
-          <Menu.Item key="private">개인정보</Menu.Item>
-          <Menu.Item key="logout">로그아웃</Menu.Item>
+          <Menu.Item key="private"><Link href="/profile"><a>개인정보</a></Link></Menu.Item>
+          <Menu.Item key="logout"><Link href="/"><a>로그아웃</a></Link></Menu.Item>
         </SubMenu>
       </Menu>
       <Row gutter={8}>

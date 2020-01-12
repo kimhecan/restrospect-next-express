@@ -93,6 +93,169 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/Intoduce.js":
+/*!********************************!*\
+  !*** ./components/Intoduce.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\components\\Intoduce.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const {
+  Title,
+  Paragraph,
+  Text
+} = antd__WEBPACK_IMPORTED_MODULE_1__["Typography"];
+
+const Introduce = () => {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+    style: {
+      width: 600,
+      margin: 50,
+      position: 'absolute',
+      left: '49%',
+      marginTop: 800
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }, __jsx(Title, {
+    style: {
+      textAlign: 'center'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }, "RESTROPECT \uB780?"), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }), __jsx(Paragraph, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, "\uD68C\uACE0\uB97C \uC758\uBBF8\uD569\uB2C8\uB2E4. \uCD5C\uADFC \uAC1C\uBC1C\uC790\uAC00 \uB418\uAE30\uC704\uD574 \uACF5\uBD80\uB97C \uD558\uBA74\uBA74\uC11C \uAE30\uB85D\uC758 \uC911\uC694\uC131\uC744 \uAE68\uB2F3\uACE0 \uB9E4\uC77C \uAE30\uB85D\uC744 \uD558\uACE0 \uC788\uC2B5\uB2C8\uB2E4. \uADF8\uB0E5 \uC77C\uAE30\uAC00 \uC544\uB2CC \uC624\uB298 \uB0B4\uAC00 \uBB34\uC5C7\uC744 \uBC30\uC6E0\uACE0 \uBB34\uC5C7\uC744 \uB290\uAF08\uACE0 \uC5B4\uB5A4 \uBB38\uC81C\uAC00 \uC788\uC5C8\uACE0 \uB0B4\uC77C\uC740 \uBB34\uC5C7\uC744 \uD560\uC9C0 \uC0C1\uC138\uD558\uAC8C \uC801\uC2B5\uB2C8\uB2E4. \uADF8\uB807\uAC8C \uD558\uB2E4 \uBCF4\uB2C8 \uAC19\uC740 \uC0C1\uD669\uC5D0\uC11C \uC880 \uB354 \uC88B\uC740 \uC120\uD0DD\uC744 \uD558\uAC8C \uB418\uACE0 \uAC19\uC740 \uC5D0\uB7EC\uB97C \uB9CC \uB0AC\uC744 \uB54C \uB0B4\uAC00 \uC5B4\uB5BB\uAC8C \uD574\uACB0\uD588\uC5C8\uB294\uC9C0 \uAE30\uB85D\uC744 \uD574\uB1A8\uAE30 \uB54C\uBB38\uC5D0 \uAC19\uC740 \uC2E4\uC218\uB97C \uD558\uAC8C \uB420 \uD655\uB960\uC774 \uC904\uC5B4\uB4E0 \uAC83 \uAC19\uC2B5\uB2C8 \uB2E4. \uC774 \uC11C\uBE44\uC2A4\uC758 \uAE30\uB2A5\uC740 \uB9E4\uC6B0 \uAC04\uB2E8\uD569\uB2C8\uB2E4. \uB9E4\uC77C \uAE30\uB85D\uD558\uACE0 \uC5BC\uB9C8\uB098 \uAFB8\uC900\uD788 \uAE30\uB85D\uD588\uB294\uC9C0 \uB2EC\uB825\uC73C\uB85C \uB098\uD0C0\uB0B4\uC90D \uB2C8\uB2E4."), __jsx(Paragraph, {
+    style: {
+      textAlign: 'center'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: undefined
+  }, __jsx(Text, {
+    strong: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }, "\uB2F9\uC2E0\uC774 \uBC30\uC6B4 \uAC83\uC744 \uC78A\uD600\uC9C0\uB3C4\uB85D \uB450\uC9C0 \uC54A\uAE30\uB97C \uBC14\uB78D\uB2C8\uB2E4.")), __jsx(Title, {
+    level: 2,
+    style: {
+      textAlign: 'center'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
+  }, "Guidelines and Resources"), __jsx(Paragraph, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }, "\uD68C\uACE0\uB97C \uC791\uC131\uD558\uAE30 \uC704\uD55C \uC5EC\uB7EC \uBC29\uBC95\uB4E4\uC774 \uC788\uC2B5\uB2C8\uB2E4. \uADF8 \uC911\uC5D0\uC11C \uB3C4\uC6C0\uC774 \uB420\uB9CC\uD55C \uAE00\uB4E4\uC758 \uB9C1\uD06C \uC785\uB2C8\uB2E4."), __jsx(Paragraph, {
+    style: {
+      textAlign: 'center'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: undefined
+  }, __jsx("ul", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  }, __jsx("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: undefined
+  }, __jsx("a", {
+    href: "https://dal-lab.com/2019/09/18/today-i-learned/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }, "dal-lab")), __jsx("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: undefined
+  }, __jsx("a", {
+    href: "https://blog.outsider.ne.kr/1141",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: undefined
+  }, "\uC77C\uC77C \uCEE4\uBC0B")), __jsx("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: undefined
+  }, __jsx("a", {
+    href: "https://github.com/kimhecan",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }, "\uAC1C\uBC1C\uC790 github")))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Divider"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: undefined
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Introduce);
+
+/***/ }),
+
 /***/ "./components/PostCard.js":
 /*!********************************!*\
   !*** ./components/PostCard.js ***!
@@ -142,12 +305,13 @@ const PostCard = ({
       margin: '30px',
       width: '1000px'
     },
-    actions: [__jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
-      type: "setting",
+    actions: [//<Icon type="setting" key="setting" />,
+    __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+      type: "smile",
       key: "setting",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 28
       },
       __self: undefined
     }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
@@ -155,7 +319,7 @@ const PostCard = ({
       key: "edit",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 29
       },
       __self: undefined
     }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
@@ -164,7 +328,7 @@ const PostCard = ({
       onClick: onDeleteBtn,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 30
       },
       __self: undefined
     })],
@@ -174,18 +338,27 @@ const PostCard = ({
     },
     __self: undefined
   }, __jsx(Meta, {
-    title: post.createdAt.substring(0, 10),
-    description: __jsx(_PostCardContent__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      postData: post,
+    title: __jsx("p", {
+      style: {
+        color: 'gray'
+      },
       __source: {
         fileName: _jsxFileName,
         lineNumber: 34
       },
       __self: undefined
+    }, post.createdAt.substring(0, 10)),
+    description: __jsx(_PostCardContent__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      postData: post,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: undefined
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 33
     },
     __self: undefined
   })));
@@ -208,26 +381,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\components\\PostCardContent.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+const {
+  Paragraph
+} = antd__WEBPACK_IMPORTED_MODULE_2__["Typography"];
+
 const PostCardContent = ({
   postData
 }) => {
   const content = postData.content;
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, content.split(/(\<[^\>]+\>)/g).map((v, i) => {
-    if (v.match(/\<[^\>]+\>/)) {
+
+  const onChange = str => {};
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, content.split(/(º오늘 한 일|º문제점|º내일 할 일)/g).map((v, i) => {
+    if (v.match(/º오늘 한 일|º문제점|º내일 할 일/)) {
       return __jsx("strong", {
         key: i,
         style: {
-          color: 'black',
-          fontSize: '20px'
+          color: 'gray',
+          fontSize: '15px'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14
+          lineNumber: 21
         },
         __self: undefined
       }, v);
@@ -236,13 +418,12 @@ const PostCardContent = ({
     return v.split('\n').map((value, i) => {
       return __jsx("p", {
         style: {
-          color: 'black',
-          fontSize: '15px'
+          color: 'black'
         },
         key: i,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 25
         },
         __self: undefined
       }, value);
@@ -295,7 +476,18 @@ const PostForm = () => {
   const {
     mainPosts
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.post);
+  console.log(mainPosts);
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
+
+  const onScroll = () => {
+    if (window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - 100) {
+      dispatch({
+        type: _reducer_post__WEBPACK_IMPORTED_MODULE_3__["LOAD_POST_REQUEST"],
+        lastId: mainPosts[mainPosts.length - 1].id
+      });
+    }
+  };
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     if (mainPosts !== []) {
       dispatch({
@@ -303,6 +495,12 @@ const PostForm = () => {
       });
     }
   }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    window.addEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, [mainPosts.length]);
 
   const onSubmit = e => {
     e.preventDefault();
@@ -311,7 +509,7 @@ const PostForm = () => {
       return alert('게시글을 작성하세요.');
     }
 
-    const text = `<어제 한 일> ${firstText} <오늘 할 일> ${secondText} <어제의 문제점> ${thridText}`;
+    const text = `º오늘 한 일 ${firstText} º문제점 ${secondText} º내일 할 일 ${thridText}`;
     dispatch({
       type: _reducer_post__WEBPACK_IMPORTED_MODULE_3__["ADD_POST_REQUEST"],
       data: text
@@ -329,61 +527,61 @@ const PostForm = () => {
     encType: "multipart/form-data",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 68
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
     value: firstText,
     onChange: changeFirstText,
     maxLength: 500,
-    placeholder: "<\uC5B4\uC81C \uD55C \uC77C>",
+    placeholder: "\uC624\uB298 \uD55C \uC77C(Facts (\uC0AC\uC2E4, \uAC1D\uAD00),Feelings (\uB290\uB08C, \uC8FC\uAD00),  Findings (\uBC30\uC6B4 \uC810)) ",
     style: {
       height: '150px',
       width: "1000px"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 69
     },
     __self: undefined
-  }, '<어제한일>', "}"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
+  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
     value: secondText,
     onChange: changeSecondText,
     maxLength: 500,
-    placeholder: "<\uC624\uB298 \uD560 \uC77C>",
+    placeholder: "\uBB38\uC81C\uC810",
     style: {
       height: '150px',
       width: "1000px"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 70
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
     value: thridText,
     onChange: changeThridText,
     maxLength: 500,
-    placeholder: "<\uC5B4\uC81C\uC758 \uBB38\uC81C\uC810>",
+    placeholder: "\uB0B4\uC77C \uD560 \uC77C",
     style: {
       height: '150px',
       width: "1000px"
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 71
     },
     __self: undefined
   }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 71
     },
     __self: undefined
   }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 71
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -397,7 +595,7 @@ const PostForm = () => {
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 72
     },
     __self: undefined
   }, "\uBC1C\uD589")));
@@ -2778,14 +2976,17 @@ if (false) {} else {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_PostForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PostForm */ "./components/PostForm.js");
-/* harmony import */ var _components_login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/login */ "./components/login.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_PostCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/PostCard */ "./components/PostCard.js");
-/* harmony import */ var _reducer_post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reducer/post */ "./reducer/post.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_PostForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/PostForm */ "./components/PostForm.js");
+/* harmony import */ var _components_login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/login */ "./components/login.js");
+/* harmony import */ var _components_PostCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/PostCard */ "./components/PostCard.js");
+/* harmony import */ var _components_Intoduce__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Intoduce */ "./components/Intoduce.js");
 var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -2796,51 +2997,73 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Home = () => {
   const {
     user
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.user);
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
   const {
     mainPosts
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.post);
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, user.userId !== null ? __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: undefined
-  }, __jsx(_components_PostForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: undefined
-  }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
     },
     __self: undefined
-  }), __jsx("br", {
+  }, __jsx(_components_PostForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
     },
     __self: undefined
-  }), mainPosts.map(v => {
-    return __jsx(_components_PostCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }), mainPosts.length ? mainPosts.map(v => {
+    return __jsx(_components_PostCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
       key: v.id,
       post: v,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 23
       },
       __self: undefined
     });
-  })) : __jsx(_components_login__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }) : __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Empty"], {
+    image: antd__WEBPACK_IMPORTED_MODULE_2__["Empty"].PRESENTED_IMAGE_SIMPLE,
+    style: {
+      width: '1000px'
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 27
     },
     __self: undefined
-  }));
+  })) : __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: undefined
+  }, __jsx(_components_login__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  }), __jsx(_components_Intoduce__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: undefined
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
@@ -3173,6 +3396,7 @@ const DELETE_POST_FAILRUE = 'DELETE_POST_FAILRUE';
     switch (action.type) {
       case LOAD_POST_REQUEST:
         {
+          draft.mainPosts = action.lastId == 0 ? [] : draft.mainPosts;
           break;
         }
 
@@ -3188,10 +3412,10 @@ const DELETE_POST_FAILRUE = 'DELETE_POST_FAILRUE';
 
       case LOAD_POST_SUCCESS:
         {
-          draft.mainPosts = [];
-          action.data.forEach(d => {
-            draft.mainPosts.unshift(d);
-          });
+          draft.mainPosts = draft.mainPosts.concat(action.data); // action.data.forEach((d) => {
+          //   draft.mainPosts.unshift(d);
+          // })
+
           break;
         }
 

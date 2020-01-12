@@ -33,6 +33,7 @@ export default (state = initalState, action) => {
   return produce(state, (draft) => {
     switch (action.type) {
       case LOAD_POST_REQUEST: {
+        draft.mainPosts = action.lastId == 0 ? [] : draft.mainPosts
         break;
       }
       case ADD_POST_REQUEST: {
@@ -42,10 +43,10 @@ export default (state = initalState, action) => {
         break;
       }
       case LOAD_POST_SUCCESS: {
-        draft.mainPosts = [];
-        action.data.forEach((d) => {
-          draft.mainPosts.unshift(d);
-        })
+        draft.mainPosts = draft.mainPosts.concat(action.data);
+        // action.data.forEach((d) => {
+        //   draft.mainPosts.unshift(d);
+        // })
         break;
       }
       case ADD_POST_SUCCESS: {
