@@ -1,13 +1,25 @@
-next와 express 를 사용해서 회원가입, 로그인, 로그아웃, 포스팅, 포스팅편집, 삭제 등 기능을 구현합니다.
+**RETROSPECT**
 
 
-front
 
+*front*
 
-npm run dev
-
-
-back
-
+```
+npm i
 
 npm run dev
+```
+
+*back*
+
+```
+npm i
+
+npm run dev
+```
+
+*기능*
+
+- 회원가입, 로그인
+- 게시글 추가, 게시글 삭제
+- 달력에 게시글 추가한날 표시
