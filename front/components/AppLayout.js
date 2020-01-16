@@ -34,7 +34,7 @@ const AppLayout = ({ children }) => {
       <Menu mode="horizontal" selectedKeys={current} onClick={handleClick} style={{ backgroundColor: '#00001a'}}>
         <Menu.Item key="home"><Link href="/"><a style={{ color: 'white'}}>RESTROPECT</a></Link></Menu.Item>
         <Menu.Item key="search">
-          <Input.Search enterButton style={{ verticalAlign: 'middle', backgroundColor: '#000066' }}  />
+          {/* <Input.Search enterButton style={{ verticalAlign: 'middle', backgroundColor: '#000066' }}  /> */}
         </Menu.Item>
         <SubMenu title={ <span className="submenu" style={{color: 'white'}}>{user ? user.nick : ''}</span>} style={{ float: 'right' }}>
           <Menu.Item key="private"><Link href="/profile"><a>개인정보</a></Link></Menu.Item>

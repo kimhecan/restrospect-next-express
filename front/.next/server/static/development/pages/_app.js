@@ -196,18 +196,7 @@ const AppLayout = ({
       lineNumber: 36
     },
     __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"].Search, {
-    enterButton: true,
-    style: {
-      verticalAlign: 'middle',
-      backgroundColor: '#000066'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: undefined
-  })), __jsx(SubMenu, {
+  }), __jsx(SubMenu, {
     title: __jsx("span", {
       className: "submenu",
       style: {
