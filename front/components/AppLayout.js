@@ -25,7 +25,6 @@ const AppLayout = ({ children }) => {
 
     }
     if(current === 'private') {
-      
     }
     setCurrent('');
   }, [current])

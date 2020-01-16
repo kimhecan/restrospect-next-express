@@ -379,26 +379,14 @@ const PostCard = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\components\\PostCardContent.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-
-
-const {
-  Paragraph
-} = antd__WEBPACK_IMPORTED_MODULE_2__["Typography"];
 
 const PostCardContent = ({
   postData
 }) => {
   const content = postData.content;
-
-  const onChange = str => {};
-
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, content.split(/(º오늘 한 일|º문제점|º내일 할 일)/g).map((v, i) => {
     if (v.match(/º오늘 한 일|º문제점|º내일 할 일/)) {
       return __jsx("strong", {
@@ -409,7 +397,7 @@ const PostCardContent = ({
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 12
         },
         __self: undefined
       }, v);
@@ -423,7 +411,7 @@ const PostCardContent = ({
         key: i,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 16
         },
         __self: undefined
       }, value);
@@ -476,7 +464,6 @@ const PostForm = () => {
   const {
     mainPosts
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.post);
-  console.log(mainPosts);
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
 
   const onScroll = () => {
@@ -509,6 +496,13 @@ const PostForm = () => {
       return alert('게시글을 작성하세요.');
     }
 
+    const recentPostDate = mainPosts[0].createdAt.substring(0, 10).split('-').map(v => Number(v));
+    const toDay = new Date().toLocaleDateString().split('.').map(v => Number(v));
+
+    if (toDay[0] == recentPostDate[0] && toDay[1] == recentPostDate[1] && toDay[2] == recentPostDate[2]) {
+      return alert('이미 오늘 회고를 작성하셨습니다!');
+    }
+
     const text = `º오늘 한 일 ${firstText} º문제점 ${secondText} º내일 할 일 ${thridText}`;
     dispatch({
       type: _reducer_post__WEBPACK_IMPORTED_MODULE_3__["ADD_POST_REQUEST"],
@@ -527,7 +521,7 @@ const PostForm = () => {
     encType: "multipart/form-data",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 71
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
@@ -541,7 +535,7 @@ const PostForm = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 72
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
@@ -555,7 +549,7 @@ const PostForm = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 73
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
@@ -569,19 +563,19 @@ const PostForm = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 74
     },
     __self: undefined
   }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 74
     },
     __self: undefined
   }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 74
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -595,7 +589,7 @@ const PostForm = () => {
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 75
     },
     __self: undefined
   }, "\uBC1C\uD589")));

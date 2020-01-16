@@ -20,9 +20,6 @@ const PostForm = () => {
   const [thridText, setThridText,changeThridText] = useInput('');
 
   const { mainPosts } = useSelector(state => state.post);
-  console.log(mainPosts);
-  
-
   const dispatch = useDispatch();
 
   const onScroll = () => {
@@ -53,6 +50,12 @@ const PostForm = () => {
     e.preventDefault();
     if (!firstText || !secondText || !thridText) {
       return alert('게시글을 작성하세요.');
+    }
+    const recentPostDate = mainPosts[0].createdAt.substring(0,10).split('-').map(v => Number(v));
+    const toDay = new Date().toLocaleDateString().split('.').map(v => Number(v));
+    
+    if (toDay[0] == recentPostDate[0] && toDay[1] == recentPostDate[1] && toDay[2] == recentPostDate[2]) {
+      return alert('이미 오늘 회고를 작성하셨습니다!');
     }
     const text = `º오늘 한 일 ${firstText} º문제점 ${secondText} º내일 할 일 ${thridText}`;
     dispatch({

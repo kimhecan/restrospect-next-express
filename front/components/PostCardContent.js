@@ -1,17 +1,8 @@
 import React from 'react';
-import PropsTypes from 'prop-types';
-import { Typography } from 'antd';
-
-const { Paragraph } = Typography;
 
 const PostCardContent = ({ postData }) => {
 
   const content = postData.content;
-
-  const onChange = (str) => {
-
-  }
-
   
   return (
     <>

@@ -1,32 +1,24 @@
 import React from 'react';
-import { Card, Icon, Avatar } from 'antd';
-
-const { Meta } = Card;
+import { Row, Col, Statistic } from 'antd';
+import { useSelector } from 'react-redux';
 
 const Profile = () => {
+
+  const { mainPosts } = useSelector(state => state.post);
+  
+
   return (
     <>
       <div>
-        <Card
-          style={{ width: 500,margin: '50px',position: 'absolute', left: '40%' }}
-          cover={
-            <img
-              alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-          }
-          actions={[
-            <Icon type="setting" key="setting" />,
-            <Icon type="edit" key="edit" />,
-            <Icon type="ellipsis" key="ellipsis" />,
-          ]}
-        >
-          <Meta
-            avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-            title="Card title"
-            description="This is the description"
-          />
-        </Card>,
+
+        <Row gutter={16} style={{margin: 50, backgroundColor: '#F6F6F6', border: '2px soild black', padding: '150px'}}>
+          <Col span={12}>
+            <Statistic title="Post Count" value={mainPosts.length} valueStyle={{ color: '#3f8600' }} style={{ backgroundColor: 'white', padding: '20px'}} />
+          </Col>
+          <Col span={12}>
+            <Statistic title="Your Class" value={'초심자'}  valueStyle={{color: '#FFD700'}} style={{ backgroundColor: 'white', padding: '20px'}}/>
+          </Col>
+        </Row>
       </div>
     </>
   )
