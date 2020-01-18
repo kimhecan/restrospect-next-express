@@ -44,9 +44,6 @@ export default (state = initalState, action) => {
       }
       case LOAD_POST_SUCCESS: {
         draft.mainPosts = draft.mainPosts.concat(action.data);
-        // action.data.forEach((d) => {
-        //   draft.mainPosts.unshift(d);
-        // })
         break;
       }
       case ADD_POST_SUCCESS: {

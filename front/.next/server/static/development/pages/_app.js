@@ -93,10 +93,10 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./components/AppLayout.js":
-/*!*********************************!*\
-  !*** ./components/AppLayout.js ***!
-  \*********************************/
+/***/ "./components/Buttons.js":
+/*!*******************************!*\
+  !*** ./components/Buttons.js ***!
+  \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -104,195 +104,142 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd */ "antd");
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _reducer_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reducer/user */ "./reducer/user.js");
-/* harmony import */ var _components_Calendar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Calendar */ "./components/Calendar.js");
-var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\components\\AppLayout.js";
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\components\\Buttons.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+const Button = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button`
+  width: 500px;
+  margin-top: 50px;
+  height: 100px;
+  background-color: white;
+  border-color: #0366d6;
+  border-radius: 10px;
+  color: black;
+`;
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.img`
+width: 55px;
+margin-top: 5px;
+`;
 
-
-
-
-
-const {
-  SubMenu
-} = antd__WEBPACK_IMPORTED_MODULE_3__["Menu"];
-
-const AppLayout = ({
-  children
-}) => {
-  const {
-    0: current,
-    1: setCurrent
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('home');
-  const {
-    user
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(state => state.user);
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useDispatch"])();
-
-  const handleClick = e => {
-    setCurrent(e.key);
-  };
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    if (current === 'logout') {
-      dispatch({
-        type: _reducer_user__WEBPACK_IMPORTED_MODULE_5__["LOG_OUT_REQUEST"]
-      });
-    }
-
-    if (current === 'private') {}
-
-    setCurrent('');
-  }, [current]);
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"], {
-    mode: "horizontal",
-    selectedKeys: current,
-    onClick: handleClick,
-    style: {
-      backgroundColor: '#00001a'
+const Buttons = () => {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Button, {
+    href: "https://opentutorials.org/course/1",
+    target: "_blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
     },
+    __self: undefined
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, __jsx(Image, {
+    src: "https://user-images.githubusercontent.com/39295881/72589647-2d107e80-393f-11ea-9f03-d8a7605841f4.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: undefined
+  })), __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }, "\uC0DD\uD65C\uCF54\uB529\uC740 \uD504\uB85C\uADF8\uB798\uBC0D\uC744 \uC54C\uB824\uC8FC\uB294 \uBB34\uB8CC \uC628\uB77C\uC778, \uC624\uD504\uB77C\uC778 \uC218\uC5C5", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }))), __jsx(Button, {
+    href: "https://programmers.co.kr/",
+    target: "_blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: undefined
+  }, __jsx("div", {
+    style: {
+      float: 'left'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  }, __jsx(Image, {
+    src: "https://user-images.githubusercontent.com/39295881/72590937-51218f00-3942-11ea-8021-bcb45af2c275.png",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 34
     },
     __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
-    key: "home",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: undefined
-  }, __jsx("a", {
-    style: {
-      color: 'white'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: undefined
-  }, "RESTROPECT"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
-    key: "search",
+  })), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 36
     },
     __self: undefined
-  }), __jsx(SubMenu, {
-    title: __jsx("span", {
-      className: "submenu",
-      style: {
-        color: 'white'
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 39
-      },
-      __self: undefined
-    }, user ? user.nick : ''),
+  }, "\uD504\uB85C\uADF8\uB798\uBA38\uC2A4\uCF54\uB4DC \uC911\uC2EC\uC758 \uAC1C\uBC1C\uC790 \uCC44\uC6A9. \uC2A4\uD0DD \uAE30\uBC18\uC758 \uD3EC\uC9C0\uC158 \uB9E4\uCE6D.", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: undefined
+  }), "\uAC1C\uBC1C\uC790 \uB9DE\uCDA4\uD615 \uD504\uB85C\uD544\uC744 \uB4F1\uB85D\uD558\uACE0,", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: undefined
+  }), "\uB098\uC640 \uAE30\uC220 \uAD81\uD569\uC774 \uC798 \uB9DE\uB294 \uAE30\uC5C5\uB4E4\uC744 \uB9E4\uCE6D \uBC1B\uC73C\uC138\uC694.")), __jsx(Button, {
+    href: "https://www.acmicpc.net/",
+    target: "_blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, __jsx("div", {
     style: {
-      float: 'right'
+      float: 'left'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 43
     },
     __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
-    key: "private",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/profile",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: undefined
-  }, "\uAC1C\uC778\uC815\uBCF4"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
-    key: "logout",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: undefined
-  }, "\uB85C\uADF8\uC544\uC6C3"))))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Row"], {
-    gutter: 8,
+  }, __jsx(Image, {
+    src: "https://user-images.githubusercontent.com/39295881/72591712-37814700-3944-11ea-8e90-a8966b8a0ad1.png",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 44
     },
     __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-    xs: 24,
-    md: 16,
+  })), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 46
     },
     __self: undefined
-  }, children), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-    xs: 24,
-    md: 8,
+  }, "\uBC31\uC900\uC740 \uCEF4\uD4E8\uD130 \uD504\uB85C\uADF8\uB798\uBC0D \uC54C\uACE0\uB9AC\uC998 \uBB38\uC81C \uD480\uC774 \uC11C\uBE44\uC2A4\uB97C", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 47
     },
     __self: undefined
-  }, user.nick ? __jsx(_components_Calendar__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: undefined
-  }) : '')));
+  }), "\uC81C\uACF5\uD574\uC8FC\uB294 \uC6F9\uC0AC\uC774\uD2B8\uC774\uB2E4")));
 };
 
-AppLayout.propTypes = {
-  children: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.node
-}; //<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
-/* harmony default export */ __webpack_exports__["default"] = (AppLayout);
+/* harmony default export */ __webpack_exports__["default"] = (Buttons);
 
 /***/ }),
 
@@ -519,21 +466,266 @@ const Calendars = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _functions_postDate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../functions/postDate */ "./functions/postDate.js");
 var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\components\\DateCell.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
- //postsDate 2020-01-09
-//calendatCell 01 09 2020
+
+
+const Div = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  background-color: #00f603;
+  width: 65px;
+  height: 3px;
+  margin-top: 0px;
+`;
 
 const DateCell = ({
   date
 }) => {
+  const isPosted = Object(_functions_postDate__WEBPACK_IMPORTED_MODULE_2__["isPostDate"])(date);
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, isPosted ? __jsx(Div, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }) : null);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (DateCell);
+
+/***/ }),
+
+/***/ "./containers/AppLayout.js":
+/*!*********************************!*\
+  !*** ./containers/AppLayout.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _reducer_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reducer/user */ "./reducer/user.js");
+/* harmony import */ var _components_Calendar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Calendar */ "./components/Calendar.js");
+/* harmony import */ var _components_Buttons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Buttons */ "./components/Buttons.js");
+var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\containers\\AppLayout.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
+
+const {
+  SubMenu
+} = antd__WEBPACK_IMPORTED_MODULE_3__["Menu"];
+
+const AppLayout = ({
+  children
+}) => {
+  const {
+    0: current,
+    1: setCurrent
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('home');
+  const {
+    user
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(state => state.user);
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useDispatch"])();
+
+  const handleClick = e => {
+    setCurrent(e.key);
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (current === 'logout') {
+      dispatch({
+        type: _reducer_user__WEBPACK_IMPORTED_MODULE_5__["LOG_OUT_REQUEST"]
+      });
+    }
+
+    if (current === 'private') {}
+
+    setCurrent('');
+  }, [current]);
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"], {
+    mode: "horizontal",
+    selectedKeys: current,
+    onClick: handleClick,
+    style: {
+      backgroundColor: '#00001a'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
+    key: "home",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, __jsx("a", {
+    style: {
+      color: 'white'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, "RESTROSPECT"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
+    key: "search",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: undefined
+  }), __jsx(SubMenu, {
+    title: __jsx("span", {
+      className: "submenu",
+      style: {
+        color: 'white'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: undefined
+    }, user ? user.nick : ''),
+    style: {
+      float: 'right'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: undefined
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
+    key: "private",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/profile",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }, __jsx("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }, "\uAC1C\uC778\uC815\uBCF4"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
+    key: "logout",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, __jsx("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, "\uB85C\uADF8\uC544\uC6C3"))))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Row"], {
+    gutter: 8,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: undefined
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+    xs: 24,
+    md: 16,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: undefined
+  }, children), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+    xs: 24,
+    md: 8,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: undefined
+  }, user.nick ? __jsx(_components_Calendar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
+  }) : '', user.nick ? __jsx(_components_Buttons__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: undefined
+  }) : '')));
+};
+
+AppLayout.propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.node
+};
+/* harmony default export */ __webpack_exports__["default"] = (AppLayout);
+
+/***/ }),
+
+/***/ "./functions/postDate.js":
+/*!*******************************!*\
+  !*** ./functions/postDate.js ***!
+  \*******************************/
+/*! exports provided: isPostDate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isPostDate", function() { return isPostDate; });
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_0__);
+
+function isPostDate(date) {
   const month = ["None", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const {
     mainPosts
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["useSelector"])(state => state.post);
   const postsDate = mainPosts.map(v => String(v.createdAt).substring(0, 10));
   let calendarCell = String(date._d).substring(4, 15);
   let index = 0;
@@ -557,22 +749,8 @@ const DateCell = ({
     }
   }
 
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, isPosted ? __jsx("div", {
-    style: {
-      backgroundColor: '#00f603',
-      width: '65px',
-      height: '3px',
-      marginTop: '0px'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: undefined
-  }) : null);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (DateCell);
+  return isPosted;
+}
 
 /***/ }),
 
@@ -2766,7 +2944,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_redux_saga__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_redux_saga__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! redux-devtools-extension */ "redux-devtools-extension");
 /* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout.js");
+/* harmony import */ var _containers_AppLayout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../containers/AppLayout */ "./containers/AppLayout.js");
 /* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../reducer */ "./reducer/index.js");
 /* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! redux-saga */ "redux-saga");
 /* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(redux_saga__WEBPACK_IMPORTED_MODULE_11__);
@@ -2774,11 +2952,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _reducer_user__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../reducer/user */ "./reducer/user.js");
-/* harmony import */ var _reducer_post__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../reducer/post */ "./reducer/post.js");
 
 var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\pages\\_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
 
 
 
@@ -2803,19 +2979,19 @@ const Restropect = ({
     store: store,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 20
     },
     __self: undefined
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 21
     },
     __self: undefined
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 22
     },
     __self: undefined
   }, "restropect"), __jsx("link", {
@@ -2823,19 +2999,19 @@ const Restropect = ({
     href: "https://cdnjs.cloudflare.com/ajax/libs/antd/3.25.3/antd.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 23
     },
     __self: undefined
-  })), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  })), __jsx(_containers_AppLayout__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 25
     },
     __self: undefined
   }, __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 26
     },
     __self: undefined
   })))));
@@ -2977,10 +3153,7 @@ const DELETE_POST_FAILRUE = 'DELETE_POST_FAILRUE';
 
       case LOAD_POST_SUCCESS:
         {
-          draft.mainPosts = draft.mainPosts.concat(action.data); // action.data.forEach((d) => {
-          //   draft.mainPosts.unshift(d);
-          // })
-
+          draft.mainPosts = draft.mainPosts.concat(action.data);
           break;
         }
 
@@ -3726,6 +3899,17 @@ module.exports = require("redux-saga");
 /***/ (function(module, exports) {
 
 module.exports = require("redux-saga/effects");
+
+/***/ }),
+
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
 
 /***/ }),
 

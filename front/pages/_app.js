@@ -6,13 +6,12 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import withReduxSaga from 'next-redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import AppLayout from '../components/AppLayout';
+import AppLayout from '../containers/AppLayout';
 import reducer from '../reducer';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga  from '../sagas';
 import axios from 'axios';
 import { LOAD_USER_REQUEST } from '../reducer/user'
-import { LOAD_POST_REQUEST } from '../reducer/post';
 
 
 const Restropect = ({ Component, store, pageProps }) => {

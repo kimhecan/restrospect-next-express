@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import { Empty, Row, Col } from 'antd';
-import PostForm from '../components/PostForm';
-import Login from '../components/login';
-import PostCard from '../components/PostCard';
+import { Empty } from 'antd';
+import PostForm from '../containers/PostForm';
+import Login from '../containers/login';
+import PostCard from '../containers/PostCard';
 import Introduce from '../components/Intoduce';
+
+
 
 const Home = () => {
 
