@@ -39,6 +39,7 @@ const AppLayout = ({ children }) => {
         </Menu.Item>
         <SubMenu title={ <span className="submenu" style={{color: 'white'}}>{user ? user.nick : ''}</span>} style={{ float: 'right' }}>
           <Menu.Item key="private"><Link href="/profile"><a>개인정보</a></Link></Menu.Item>
+          <Menu.Item key="help"><Link href="/help"><a>Help</a></Link></Menu.Item>
           <Menu.Item key="logout"><Link href="/"><a>로그아웃</a></Link></Menu.Item>
         </SubMenu>
       </Menu>

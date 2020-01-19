@@ -106,134 +106,140 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "C:\\Users\\82103\\Desktop\\retrospect\\front\\components\\Buttons.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button`
-  width: 500px;
-  margin-top: 50px;
-  height: 100px;
-  background-color: white;
-  border-color: #0366d6;
-  border-radius: 10px;
-  color: black;
-`;
-const Image = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.img`
-width: 55px;
-margin-top: 5px;
-`;
+
 
 const Buttons = () => {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Button, {
-    href: "https://opentutorials.org/course/1",
-    target: "_blank",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: undefined
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: undefined
-  }, __jsx(Image, {
-    src: "https://user-images.githubusercontent.com/39295881/72589647-2d107e80-393f-11ea-9f03-d8a7605841f4.png",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: undefined
-  })), __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: undefined
-  }, "\uC0DD\uD65C\uCF54\uB529\uC740 \uD504\uB85C\uADF8\uB798\uBC0D\uC744 \uC54C\uB824\uC8FC\uB294 \uBB34\uB8CC \uC628\uB77C\uC778, \uC624\uD504\uB77C\uC778 \uC218\uC5C5", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: undefined
-  }))), __jsx(Button, {
-    href: "https://programmers.co.kr/",
-    target: "_blank",
+  const StyledButton = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(antd__WEBPACK_IMPORTED_MODULE_2__["Button"])`
+    width: 500px;
+    margin-top: 50px;
+    height: 100px;
+    background-color: white;
+    border-color: black;
+    border-radius: 10px;
+    color: black;
+  `;
+  const StyledImage = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.img`
+    width: 55px;
+    margin-top: 15px;
+    float: left;
+  `;
+  const StyledPara = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.p`
+    color: gray;
+    margin-top: 5px;
+
+  `;
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32
     },
     __self: undefined
-  }, __jsx("div", {
-    style: {
-      float: 'left'
-    },
+  }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 33
     },
     __self: undefined
-  }, __jsx(Image, {
-    src: "https://user-images.githubusercontent.com/39295881/72590937-51218f00-3942-11ea-8021-bcb45af2c275.png",
+  }), __jsx(StyledButton, {
+    href: "https://opentutorials.org/course/1",
+    target: "_blank",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 34
     },
     __self: undefined
-  })), __jsx("p", {
+  }, __jsx(StyledImage, {
+    src: "https://user-images.githubusercontent.com/39295881/72589647-2d107e80-393f-11ea-9f03-d8a7605841f4.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }), __jsx(StyledPara, {
+    style: {
+      color: 'gray'
+    },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 36
     },
     __self: undefined
-  }, "\uD504\uB85C\uADF8\uB798\uBA38\uC2A4\uCF54\uB4DC \uC911\uC2EC\uC758 \uAC1C\uBC1C\uC790 \uCC44\uC6A9. \uC2A4\uD0DD \uAE30\uBC18\uC758 \uD3EC\uC9C0\uC158 \uB9E4\uCE6D.", __jsx("br", {
+  }, "\uC0DD\uD65C\uCF54\uB529\uC740 \uD504\uB85C\uADF8\uB798\uBC0D\uC744 \uC54C\uB824\uC8FC\uB294 \uBB34\uB8CC \uC628\uB77C\uC778, \uC624\uD504\uB77C\uC778 \uC218\uC5C5", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 37
     },
     __self: undefined
-  }), "\uAC1C\uBC1C\uC790 \uB9DE\uCDA4\uD615 \uD504\uB85C\uD544\uC744 \uB4F1\uB85D\uD558\uACE0,", __jsx("br", {
+  }), "\uC785\uB2C8\uB2E4. \uBE44\uC804\uACF5\uC790\uB3C4 \uC27D\uAC8C \uBC30\uC6B8 \uC218 \uC788\uB3C4\uB85D \uC124\uBA85\uD558\uBA70 \uB2E4\uC591\uD55C \uBD84\uC57C", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 38
     },
     __self: undefined
-  }), "\uB098\uC640 \uAE30\uC220 \uAD81\uD569\uC774 \uC798 \uB9DE\uB294 \uAE30\uC5C5\uB4E4\uC744 \uB9E4\uCE6D \uBC1B\uC73C\uC138\uC694.")), __jsx(Button, {
-    href: "https://www.acmicpc.net/",
+  }), "\uB97C \uB113\uAC8C \uBC30\uC6B8 \uC218 \uC788\uC2B5\uB2C8\uB2E4.")), __jsx(StyledButton, {
+    href: "https://programmers.co.kr/",
     target: "_blank",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: undefined
-  }, __jsx("div", {
-    style: {
-      float: 'left'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: undefined
-  }, __jsx(Image, {
-    src: "https://user-images.githubusercontent.com/39295881/72591712-37814700-3944-11ea-8e90-a8966b8a0ad1.png",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 44
     },
     __self: undefined
-  })), __jsx("p", {
+  }, __jsx(StyledImage, {
+    src: "https://user-images.githubusercontent.com/39295881/72590937-51218f00-3942-11ea-8021-bcb45af2c275.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: undefined
+  }), __jsx(StyledPara, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 46
     },
     __self: undefined
-  }, "\uBC31\uC900\uC740 \uCEF4\uD4E8\uD130 \uD504\uB85C\uADF8\uB798\uBC0D \uC54C\uACE0\uB9AC\uC998 \uBB38\uC81C \uD480\uC774 \uC11C\uBE44\uC2A4\uB97C", __jsx("br", {
+  }, "\uD504\uB85C\uADF8\uB798\uBA38\uC2A4\uCF54\uB4DC \uC911\uC2EC\uC758 \uAC1C\uBC1C\uC790 \uCC44\uC6A9. \uC2A4\uD0DD \uAE30\uBC18\uC758 \uD3EC\uC9C0\uC158 \uB9E4\uCE6D.", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 47
+    },
+    __self: undefined
+  }), "\uAC1C\uBC1C\uC790 \uB9DE\uCDA4\uD615 \uD504\uB85C\uD544\uC744 \uB4F1\uB85D\uD558\uACE0, \uB098\uC640 \uAE30\uC220 \uAD81\uD569\uC774 \uC798 \uB9DE\uB294", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: undefined
+  }), "\uAE30\uC5C5\uB4E4\uC744 \uB9E4\uCE6D \uBC1B\uC73C\uC138\uC694.")), __jsx(StyledButton, {
+    href: "https://www.acmicpc.net/",
+    target: "_blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: undefined
+  }, __jsx(StyledImage, {
+    src: "https://user-images.githubusercontent.com/39295881/72591712-37814700-3944-11ea-8e90-a8966b8a0ad1.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: undefined
+  }), __jsx(StyledPara, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
+  }, "\uBC31\uC900\uC740 \uCEF4\uD4E8\uD130 \uD504\uB85C\uADF8\uB798\uBC0D \uC54C\uACE0\uB9AC\uC998 \uBB38\uC81C \uD480\uC774 \uC11C\uBE44\uC2A4\uB97C", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
     },
     __self: undefined
   }), "\uC81C\uACF5\uD574\uC8FC\uB294 \uC6F9\uC0AC\uC774\uD2B8\uC774\uB2E4")));
@@ -644,14 +650,14 @@ const AppLayout = ({
     },
     __self: undefined
   }, "\uAC1C\uC778\uC815\uBCF4"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
-    key: "logout",
+    key: "help",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 42
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
+    href: "/help",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 42
@@ -663,11 +669,31 @@ const AppLayout = ({
       lineNumber: 42
     },
     __self: undefined
+  }, "Help"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Menu"].Item, {
+    key: "logout",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: undefined
+  }, __jsx("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: undefined
   }, "\uB85C\uADF8\uC544\uC6C3"))))), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Row"], {
     gutter: 8,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 46
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Col"], {
@@ -675,7 +701,7 @@ const AppLayout = ({
     md: 16,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 47
     },
     __self: undefined
   }, children), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Col"], {
@@ -683,19 +709,19 @@ const AppLayout = ({
     md: 8,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 50
     },
     __self: undefined
   }, user.nick ? __jsx(_components_Calendar__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 51
     },
     __self: undefined
   }) : '', user.nick ? __jsx(_components_Buttons__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 52
     },
     __self: undefined
   }) : '')));
